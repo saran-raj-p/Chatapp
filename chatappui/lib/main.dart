@@ -1,12 +1,12 @@
-import 'package:chatappui/login.dart';
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+import 'register/register.dart';
 void main() {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
       '/': (context) => const MainApp(),
-      '/login': (context) => const Login(),
+      '/register': (context) => const Register(),
     },
   ));
 }
@@ -21,10 +21,10 @@ class MainApp extends StatelessWidget {
         body: Center(
           child: TextButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/login');
+              Navigator.pushNamed(context, '/register');
             },
             child: const Text(
-              "Login",
+              "Register",
               selectionColor: Colors.cyan,
             ),
           ),
