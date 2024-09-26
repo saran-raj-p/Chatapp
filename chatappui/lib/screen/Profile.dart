@@ -24,14 +24,14 @@ class Profile extends StatelessWidget {
                 fontSize: 30,
               ),
             ),
-            SizedBox(
+            Container(
               height: 90,
               child: Stack(
                 children: [
                   const Positioned(
                       top: 0,
                       child: CircleAvatar(
-                        backgroundImage: AssetImage('images/profile.jpg'),
+                        backgroundImage: AssetImage('images/forgot.png'),
                         radius: 40,
                       )),
                   Positioned(

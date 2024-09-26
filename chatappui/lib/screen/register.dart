@@ -19,10 +19,10 @@ class Register extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Center(
-                child: SizedBox(
+                child: Container(
                   width: 300, // Set the desired width
                   child: TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: 'Enter your name',
                       labelText: 'Your Name',
                       border: OutlineInputBorder(
@@ -35,10 +35,10 @@ class Register extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Center(
-                child: SizedBox(
+                child: Container(
                   width: 300, // Set the desired width
                   child: TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: 'Enter your email',
                       labelText: 'Your Email',
                       border: OutlineInputBorder(
@@ -51,10 +51,10 @@ class Register extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Center(
-                child: SizedBox(
+                child: Container(
                   width: 300, // Set the desired width
                   child: TextFormField(
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       hintText: 'Enter your password',
                       labelText: 'Your Password',
                       border: OutlineInputBorder(
