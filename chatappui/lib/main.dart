@@ -1,4 +1,4 @@
-import 'package:chatappui/login.dart';
+import 'package:chatappui/screen/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
