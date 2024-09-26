@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\my projects\\Chatapp\\Chatappapi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\chatappapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:chatappapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Chatappapi",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+              "RelativeDocumentMoniker": "Chatappapi.csproj",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+              "RelativeToolTip": "Chatappapi.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-26T13:16:02.633Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
