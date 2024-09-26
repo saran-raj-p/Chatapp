@@ -1,3 +1,4 @@
+import 'package:chatappui/forgotpassword/forgotpassword.dart';
 import 'package:chatappui/profile/Profile.dart';
 import 'package:flutter/material.dart';
 import 'register/register.dart';
@@ -9,6 +10,7 @@ void main() {
       '/': (context) => const MainApp(),
       '/register': (context) => const Register(),
       '/profile': (context) => const Profile(),
+      '/forgot': (context) => const Forgotpassword(),
     },
   ));
 }
@@ -28,6 +30,15 @@ class MainApp extends StatelessWidget {
               },
               child: const Text(
                 "Register",
+                selectionColor: Colors.cyan,
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/forgot');
+              },
+              child: const Text(
+                "ForgotPassword",
                 selectionColor: Colors.cyan,
               ),
             ),
