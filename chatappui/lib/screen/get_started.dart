@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const GetStarted());
-}
-
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(scaffoldBackgroundColor: const Color(0xFFddf9f7)),
       home: Scaffold(
         body: Center(

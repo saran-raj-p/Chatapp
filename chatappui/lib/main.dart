@@ -1,13 +1,16 @@
-import 'package:chatappui/get_started/get_started.dart';
-import 'package:chatappui/profile/Profile.dart';
+import 'package:chatappui/screen/Profile.dart';
+import 'package:chatappui/screen/get_started.dart';
+import 'package:chatappui/screen/login.dart';
+import 'package:chatappui/screen/register.dart';
 import 'package:flutter/material.dart';
-import 'register/register.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
       '/': (context) => const MainApp(),
+      '/login': (context) => const Login(),
       '/register': (context) => const Register(),
       '/profile': (context) => const Profile(),
       '/getstarted': (context) => const GetStarted(),
@@ -51,6 +54,14 @@ class MainApp extends StatelessWidget {
                 selectionColor: Colors.cyan,
               ),
             ),
+            TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                child: const Text(
+                  "Login",
+                  selectionColor: Colors.cyan,
+                ))
           ],
         ),
       ),

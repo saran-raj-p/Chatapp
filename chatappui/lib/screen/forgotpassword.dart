@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-voidmain() => runApp(MaterialApp(home: Forgotpassword()));
-
 class Forgotpassword extends StatelessWidget {
   const Forgotpassword({super.key});
 
