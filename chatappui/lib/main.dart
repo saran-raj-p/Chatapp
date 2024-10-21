@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/',
+    initialRoute: '/getstarted',
     routes: {
-      '/': (context) => const MainApp(),
+      '/Main': (context) => const MainApp(),
       '/login': (context) => const Login(),
       '/register': (context) => const Register(),
       '/profile': (context) => const Profile(),
@@ -23,47 +23,45 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Column(
-          children: [
-            TextButton(
+    return Scaffold(
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/register');
+            },
+            child: const Text(
+              "Register",
+              selectionColor: Colors.cyan,
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: const Text(
+              "Profile",
+              selectionColor: Colors.cyan,
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/getstarted');
+            },
+            child: const Text(
+              "Get Started",
+              selectionColor: Colors.cyan,
+            ),
+          ),
+          TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/register');
+                Navigator.pushNamed(context, '/login');
               },
               child: const Text(
-                "Register",
+                "Login",
                 selectionColor: Colors.cyan,
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profile');
-              },
-              child: const Text(
-                "Profile",
-                selectionColor: Colors.cyan,
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/getstarted');
-              },
-              child: const Text(
-                "Get Started",
-                selectionColor: Colors.cyan,
-              ),
-            ),
-            TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/login');
-                },
-                child: const Text(
-                  "Login",
-                  selectionColor: Colors.cyan,
-                ))
-          ],
-        ),
+              ))
+        ],
       ),
     );
   }

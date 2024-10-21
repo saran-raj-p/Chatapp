@@ -33,7 +33,9 @@ class GetStarted extends StatelessWidget {
               const Text('world by sending and receiving messages.'),
               const SizedBox(height: 50),
               TextButton(
-                  onPressed: null,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/Main');
+                  },
                   style: TextButton.styleFrom(
                     backgroundColor: Colors.blue,
                   ),
