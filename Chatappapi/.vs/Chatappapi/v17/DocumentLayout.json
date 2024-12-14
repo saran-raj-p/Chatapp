@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "D:\\my projects\\Chatapp\\Chatappapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\chatappapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:chatappapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\my projects\\Chatapp\\Chatappapi\\Migrations\\20241214095508_five.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20241214095508_five.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\model\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:model\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20241214095508_five.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Migrations\\20241214095508_five.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241214095508_five.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Migrations\\20241214095508_five.cs",
+              "RelativeToolTip": "Migrations\\20241214095508_five.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T09:55:08.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "Model\\DatabaseContext.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\DatabaseContext.cs",
+              "RelativeToolTip": "Model\\DatabaseContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T07:01:18.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T14:25:55.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Chatappapi.csproj",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
-              "RelativeDocumentMoniker": "Chatappapi.csproj",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
-              "RelativeToolTip": "Chatappapi.csproj",
+              "Title": "Users.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\Users.cs",
+              "RelativeDocumentMoniker": "Model\\Users.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\Users.cs",
+              "RelativeToolTip": "Model\\Users.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T10:21:15.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T10:20:52.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-23T09:24:55.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-26T13:16:02.633Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-23T09:24:51.261Z",
               "EditorCaption": ""
             }
           ]
