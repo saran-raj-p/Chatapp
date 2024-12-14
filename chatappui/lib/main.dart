@@ -12,7 +12,7 @@ void main() {
       '/Main': (context) => const MainApp(),
       '/login': (context) => const Login(),
       '/register': (context) => const Register(),
-      '/profile': (context) => const Profile(),
+      '/profile': (context) => Profile(),
       '/getstarted': (context) => const GetStarted(),
     },
   ));
