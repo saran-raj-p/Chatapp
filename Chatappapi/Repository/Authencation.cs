@@ -8,9 +8,11 @@ namespace Chatappapi.Repository
 {
     public class Authencation : IAuthentication
     {
-        IActionResult IAuthentication.Userlogin(LoginDTo login)
+        public IActionResult Userlogin(LoginDTo login)
         {
-            throw new NotImplementedException();
+            var email = login.Email;
+            var password = login.Password;
+
         }
     }
 }

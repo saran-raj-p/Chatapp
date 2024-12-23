@@ -12,6 +12,12 @@
         public DateOnly Date { get; set; }
 
     }
+    public class RegisterDto {
+        public String Name;
+        public String Email;
+        public String Password;
+        public String Phone;
+    };
     public class LoginDTo
     {
         public string Email;
