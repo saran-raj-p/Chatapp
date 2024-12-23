@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import '../model/ProfileModel.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   Profile({super.key});
+
+  @override
+  _ProfileState createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  //profile model
+  ProfileModel? profile;
 
   final List<Friend> friends = [
     Friend(
       name: 'Saran',
-      image: Image.asset('images/profiles.png'), // Local image asset
+      image: Image.asset('images/profiles.png'),
     ),
     Friend(
       name: 'Jagan',
@@ -20,8 +31,38 @@ class Profile extends StatelessWidget {
       name: 'Yuva',
       image: Image.asset('images/profiles.png'),
     ),
-    // Add more friends here
   ];
+
+  void getProfile() async {
+    try {
+      final url = Uri.parse(
+          'https://localhost:7165/api/Profile/getprofile?id=014A619A-9655-40BD-BB6F-55C2295022A5');
+
+      final response = await http.get(url);
+
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> data = json.decode(response.body);
+
+        setState(() {
+          profile = ProfileModel.fromJson(data['data']);
+        });
+      } else {
+        print(
+            'Failed to load profile data. Status code: ${response.statusCode}');
+      }
+
+      print('Profile data: ${response.statusCode}');
+    } catch (err) {
+      print('Error: $err');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    getProfile();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +74,8 @@ class Profile extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Hello, New User',
+              Text(
+                'Hello, ${profile?.name}',
                 style: TextStyle(
                   fontSize: 20,
                 ),

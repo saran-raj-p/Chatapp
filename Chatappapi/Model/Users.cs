@@ -17,4 +17,9 @@
         public string Email;
         public string Password;
     }
+
+    public class GetProfile
+    {
+        public Guid Id { get; set; }
+    }
 }
