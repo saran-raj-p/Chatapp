@@ -168,3 +168,10 @@ D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Syste
 D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\Dapper.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\System.Data.SqlClient.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll

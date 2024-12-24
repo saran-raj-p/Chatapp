@@ -1,4 +1,6 @@
-﻿namespace Chatappapi.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Chatappapi.Model
 {
     public class Users
     {
@@ -12,10 +14,18 @@
         public DateOnly Date { get; set; }
 
     }
+    public class RegisterDto {
+        public String Name { get; set; }
+        public String Email {  get; set; }
+        public String Password {  get; set; }
+        public String Phone {  get; set; }
+    };
     public class LoginDTo
     {
-        public string Email;
-        public string Password;
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Password { get; set; }
     }
 
     public class GetProfile

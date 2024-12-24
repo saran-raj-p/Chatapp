@@ -1,17 +1,35 @@
 using Chatappapi.Interface;
 using Chatappapi.Model;
 using Chatappapi.Repository;
+using Chatappapi.services;
 using management_system_backend_api.Database.SqlConnectionPlace;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true
+    };
+});
+builder.Services.AddAuthorization();
 
 // Add Repository and Interface to a Containera
 builder.Services.AddScoped<IAuthentication,Authencation>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<AuthServices>();
 
 //Add SqlConnectionPlace
 builder.Services.AddScoped<SqlConnectionFactory>();
@@ -44,7 +62,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("chatAppCorsPolicy");
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

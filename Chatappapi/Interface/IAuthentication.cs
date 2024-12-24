@@ -6,7 +6,8 @@ namespace Chatappapi.Interface
     public interface IAuthentication
     {
         
-            public IActionResult Userlogin(LoginDTo login);
+            public Task<int> UserData(LoginDTo login);
+            public Task<LoginDTo> UserRegister(RegisterDto register);
         
     }
 }
