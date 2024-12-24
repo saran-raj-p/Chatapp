@@ -9,13 +9,13 @@ namespace Chatappapi.services
 {
     public class AuthServices
     {
-        public String GenerateToken(Guid Id,RegisterDto user)
+        public String GenerateToken(LoginDTo login)
         {
-            var userId = Id.ToString();
+            var userId = login.Email;
             var handler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(Helpers.AuthSettings.PrivateKey);
             var credentials = new SecurityTokenDescriptor { 
-                Subject = new ClaimsIdentity(new[] { new Claim("id", userId,"password",user.Password) }),
+                Subject = new ClaimsIdentity(new[] { new Claim("id", userId,"password",login.Password) }),
                 Expires = DateTime.UtcNow.AddDays(20),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature),
             };
