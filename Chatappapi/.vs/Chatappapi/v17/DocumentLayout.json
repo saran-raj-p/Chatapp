@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "D:\\my projects\\Chatapp\\Chatappapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\helpers\\authsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:helpers\\authsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\database\\storedprocedure\\checkuserexist.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:database\\storedprocedure\\checkuserexist.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\database\\storedprocedure\\checkuserexist.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:database\\storedprocedure\\checkuserexist.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\helpers\\authsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:helpers\\authsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "AuthSettings.cs",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Helpers\\AuthSettings.cs",
               "RelativeDocumentMoniker": "Helpers\\AuthSettings.cs",
@@ -62,37 +54,24 @@
               "RelativeToolTip": "Helpers\\AuthSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T11:28:51.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-24T11:28:51.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAAB8AAAArAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAACoAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-24T11:08:45.383Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CheckUserExist.sql ",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Database\\Storedprocedure\\CheckUserExist.sql",
-              "RelativeDocumentMoniker": "Database\\Storedprocedure\\CheckUserExist.sql",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Database\\Storedprocedure\\CheckUserExist.sql",
-              "RelativeToolTip": "Database\\Storedprocedure\\CheckUserExist.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-24T10:54:02.258Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -104,29 +83,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Users.cs",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\Users.cs",
               "RelativeDocumentMoniker": "Model\\Users.cs",
               "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\Users.cs",
               "RelativeToolTip": "Model\\Users.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA3wB0AAAAAAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAkwBQAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T06:51:12.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-24T06:51:12.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowCoAAAAIAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T05:58:16.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-24T05:58:16.881Z"
             },
             {
               "$type": "Document",
@@ -138,12 +115,11 @@
               "RelativeToolTip": "Interface\\IAuthentication.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T18:46:06.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T18:46:06.141Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "AuthServices.cs",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\services\\AuthServices.cs",
               "RelativeDocumentMoniker": "services\\AuthServices.cs",
@@ -151,12 +127,11 @@
               "RelativeToolTip": "services\\AuthServices.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T04:37:37.028Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T04:37:37.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Authencation.cs",
               "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Repository\\Authencation.cs",
               "RelativeDocumentMoniker": "Repository\\Authencation.cs",
@@ -164,8 +139,7 @@
               "RelativeToolTip": "Repository\\Authencation.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAAswCsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-22T05:22:05.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-22T05:22:05.439Z"
             }
           ]
         }
