@@ -47,15 +47,20 @@ namespace Chatappapi.Repository
             try
             {
                 var db = _databaseconnection.OpenSqlConnection();
+                var guid = Guid.NewGuid();
                 var name = userdata.Name;
                 var password = userdata.Password;
                 var email = userdata.Email;
                 var phone = userdata.Phone;
+                var otp = otpGenerate();
+
                 DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("uid",guid);
                 parameters.Add("name", name);
                 parameters.Add("password", password);
                 parameters.Add("email", email);
                 parameters.Add("phone",phone);
+                parameters.Add("otp",otp);
                 var result = await db.QueryFirstAsync<LoginDTo>("UserRegistration",parameters,commandType:CommandType.StoredProcedure);
                 return result;
             }
@@ -66,7 +71,12 @@ namespace Chatappapi.Repository
             }
         }
         
-
+        public String otpGenerate()
+        {
+            Random rand = new Random();
+            var otp = rand.Next(100000,999999);
+            return otp.ToString();
+        }
         
     }
 }

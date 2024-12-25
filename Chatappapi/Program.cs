@@ -41,7 +41,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("chatAppCorsPolicy",
                           policy =>
                           {
-                              policy.WithOrigins("http://localhost:64713")
+                              policy.AllowAnyOrigin()
                                                   .AllowAnyHeader()
                                                   .AllowAnyMethod();
                           });
