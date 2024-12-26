@@ -1,3 +1,4 @@
+import 'package:chatappui/screen/forgotpassword.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -33,6 +34,24 @@ class Login extends StatelessWidget {
                       hintText: "Enter Password",
                       labelText: "Password",
                       border: OutlineInputBorder()),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  // Navigate to ForgotPassword page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>  Forgotpassword()),
+                  );
+                },
+                child: Text(
+                  'Forgot Password?',
+                  style: TextStyle(
+                    decoration: TextDecoration.underline,
+                    color: Theme.of(context).colorScheme.secondary,
+                    fontSize: 20,
+                  ),
                 ),
               ),
               TextButton(

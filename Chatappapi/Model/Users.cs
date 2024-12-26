@@ -9,17 +9,18 @@ namespace Chatappapi.Model
         public string Email { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public string activation {  get; set; }
+        public string activation { get; set; }
         public string otp { get; set; }
         public DateOnly Date { get; set; }
 
     }
-    public class RegisterDto {
+    public class RegisterDto
+    {
         public Guid Id { get; set; }
         public String Name { get; set; }
-        public String Email {  get; set; }
-        public String Password {  get; set; }
-        public String Phone {  get; set; }
+        public String Email { get; set; }
+        public String Password { get; set; }
+        public String Phone { get; set; }
     };
     public class LoginDTo
     {
@@ -29,8 +30,27 @@ namespace Chatappapi.Model
         public string Password { get; set; }
     }
 
+    public class ForgotDTo
+    {
+
+        [Required]
+
+        public string Email { get; set; }
+        [Required]
+
+        public string NewPassword { get; set; }
+
+        [Required]
+
+        public string ConfirmPassword { get; set; }
+
+        public string ResetToken { get; set; }
+    }
     public class GetProfile
     {
         public Guid Id { get; set; }
     }
 }
+
+
+
