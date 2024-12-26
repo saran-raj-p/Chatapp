@@ -34,6 +34,8 @@ builder.Services.AddAuthorization();
 // Add Repository and Interface to a Containera
 builder.Services.AddScoped<IAuthentication,Authentication>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IForgotPasswordRepository, ForgotPasswordRepository>();
+
 builder.Services.AddScoped<AuthServices>();
 
 //Add SqlConnectionPlace
