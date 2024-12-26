@@ -1,7 +1,35 @@
+//import 'package:flutter/material.dart';
+
+//class Forgotpassword extends StatelessWidget {
+//const Forgotpassword({super.key});
+
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class Forgotpassword extends StatelessWidget {
-  const Forgotpassword({super.key});
+  final TextEditingController newPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
+
+  Future<void> resetPassword() async {
+    final url = Uri.parse('http://your-api-url/api/auth/reset-password');
+    final response = await http.post(
+      url,
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'newPassword': newPasswordController.text,
+        'confirmPassword': confirmPasswordController.text,
+        'resetToken': 'sample-reset-token', // Replace with actual token
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      print('Password reset successful');
+    } else {
+      print('Failed: ${response.body}');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,33 +56,46 @@ class Forgotpassword extends StatelessWidget {
           ),
         ),
         Container(
-            width: 300,
-            height: 60,
-            child: Center(
-                child: TextField(
-              decoration: InputDecoration(
+          child: SizedBox(
+            width: 300, // Set the desired width
+            child: TextFormField(
+              decoration: const InputDecoration(
+                hintText: 'Enter your Registered Mail_id',
+                labelText: 'Mail_id',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderSide: BorderSide(width: 1.0), // Reduced border width
                 ),
-                filled: true,
-                hintStyle: TextStyle(color: Colors.grey[800]),
-                hintText: "Enter new Password",
-                fillColor: Colors.white70,
               ),
-            ))),
+            ),
+          ),
+        ),
         Container(
-          width: 300, // Set your desired width for the Container
-          height: 60, // Set your desired height for the Container
-          child: Center(
-            child: TextField(
-              decoration: InputDecoration(
+          child: SizedBox(
+            width: 300, // Set the desired width
+            child: TextFormField(
+              decoration: const InputDecoration(
+                hintText: 'Enter new Password',
+                labelText: 'New password',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderSide: BorderSide(width: 1.0), // Reduced border width
                 ),
-                filled: true,
-                hintStyle: TextStyle(color: Colors.grey[800]),
-                hintText: "Enter COnfirm password",
-                fillColor: Colors.white70,
+              ),
+            ),
+          ),
+        ),
+        Container(
+          child: SizedBox(
+            width: 300, // Set the desired width
+            child: TextFormField(
+              decoration: const InputDecoration(
+                hintText: 'Enter Confirm Password',
+                labelText: 'Confirm password',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  borderSide: BorderSide(width: 1.0), // Reduced border width
+                ),
               ),
             ),
           ),

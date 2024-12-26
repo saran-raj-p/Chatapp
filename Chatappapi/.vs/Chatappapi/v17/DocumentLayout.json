@@ -1,38 +1,70 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\my projects\\Chatapp\\Chatappapi\\",
+  "WorkspaceRootPath": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:model\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\repository\\forgotpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\forgotpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\interface\\iforgotpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\iforgotpasswordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\controllers\\forgotpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\forgotpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\chatappapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:chatappapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\model\\test model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:model\\test model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\interface\\iprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\iprofilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\repository\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\profilerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\interface\\interface test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\interface test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\iauthentication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\helpers\\authsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:helpers\\authsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:services\\authservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|c:\\users\\jagan\\desktop\\chatapp\\chatappapi\\repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\authencation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,76 +74,178 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-26T13:11:01.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AuthSettings.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Helpers\\AuthSettings.cs",
-              "RelativeDocumentMoniker": "Helpers\\AuthSettings.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Helpers\\AuthSettings.cs",
-              "RelativeToolTip": "Helpers\\AuthSettings.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAAABsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T11:28:51.631Z"
+              "WhenOpened": "2024-12-25T15:08:45.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IForgotPasswordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\IForgotPasswordRepository.cs",
+              "RelativeDocumentMoniker": "Interface\\IForgotPasswordRepository.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\IForgotPasswordRepository.cs",
+              "RelativeToolTip": "Interface\\IForgotPasswordRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:40:20.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ForgotPasswordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Repository\\ForgotPasswordRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ForgotPasswordRepository.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Repository\\ForgotPasswordRepository.cs",
+              "RelativeToolTip": "Repository\\ForgotPasswordRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:37:49.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ForgotPasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Controllers\\ForgotPasswordController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ForgotPasswordController.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Controllers\\ForgotPasswordController.cs",
+              "RelativeToolTip": "Controllers\\ForgotPasswordController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAIwDwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:22:39.022Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAAACoAAAAbAAAA",
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Model\\Users.cs",
+              "RelativeDocumentMoniker": "Model\\Users.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Model\\Users.cs",
+              "RelativeToolTip": "Model\\Users.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAA+wC8AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T11:08:45.383Z",
+              "WhenOpened": "2024-12-25T14:00:32.79Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:06:21.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Chatappapi.http",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.http",
+              "RelativeDocumentMoniker": "Chatappapi.http",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.http",
+              "RelativeToolTip": "Chatappapi.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-12-25T13:59:06.046Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-24T07:06:45.84Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Users.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\Users.cs",
-              "RelativeDocumentMoniker": "Model\\Users.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Model\\Users.cs",
-              "RelativeToolTip": "Model\\Users.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAkwBQAAAAtAAAA",
+              "Title": "test model.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Model\\test model.cs",
+              "RelativeDocumentMoniker": "Model\\test model.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Model\\test model.cs",
+              "RelativeToolTip": "Model\\test model.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T06:51:12.587Z"
+              "WhenOpened": "2024-12-25T15:04:55.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
+              "Title": "IProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\IProfileRepository.cs",
+              "RelativeDocumentMoniker": "Interface\\IProfileRepository.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\IProfileRepository.cs",
+              "RelativeToolTip": "Interface\\IProfileRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:06:40.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProfileRepository.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Repository\\ProfileRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ProfileRepository.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Repository\\ProfileRepository.cs",
+              "RelativeToolTip": "Repository\\ProfileRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:37:02.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Interface test.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\Interface test.cs",
+              "RelativeDocumentMoniker": "Interface\\Interface test.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\Interface test.cs",
+              "RelativeToolTip": "Interface\\Interface test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:06:44.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBYAAAAIAAAA",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-24T05:58:16.881Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "IAuthentication.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Interface\\IAuthentication.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\IAuthentication.cs",
               "RelativeDocumentMoniker": "Interface\\IAuthentication.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Interface\\IAuthentication.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Interface\\IAuthentication.cs",
               "RelativeToolTip": "Interface\\IAuthentication.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAgAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -119,11 +253,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "AuthServices.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\services\\AuthServices.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\services\\AuthServices.cs",
               "RelativeDocumentMoniker": "services\\AuthServices.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\services\\AuthServices.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\services\\AuthServices.cs",
               "RelativeToolTip": "services\\AuthServices.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -131,13 +265,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "Authencation.cs",
-              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Repository\\Authencation.cs",
+              "DocumentMoniker": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Repository\\Authencation.cs",
               "RelativeDocumentMoniker": "Repository\\Authencation.cs",
-              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Repository\\Authencation.cs",
+              "ToolTip": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Repository\\Authencation.cs",
               "RelativeToolTip": "Repository\\Authencation.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAswCsAAAAIAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwE8AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-22T05:22:05.439Z"
             }

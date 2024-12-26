@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj": {}
+    "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.csproj": {}
   },
   "projects": {
-    "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj": {
+    "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+        "projectUniqueName": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.csproj",
         "projectName": "Chatappapi",
-        "projectPath": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
-        "packagesPath": "C:\\Users\\saran\\.nuget\\packages\\",
-        "outputPath": "D:\\my projects\\Chatapp\\Chatappapi\\obj\\",
+        "projectPath": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+        "packagesPath": "C:\\Users\\jagan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\saran\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jagan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
