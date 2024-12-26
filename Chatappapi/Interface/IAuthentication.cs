@@ -6,8 +6,9 @@ namespace Chatappapi.Interface
     public interface IAuthentication
     {
         
-            public Task<int> UserData(LoginDTo login);
+            public Task<LoginDTo> UserData(LoginDTo login);
             public Task<LoginDTo> UserRegister(RegisterDto register);
-        
+            public string saveRefreshToken(String refreshtoken, Guid id);
+            public String otpGenerate();
     }
 }

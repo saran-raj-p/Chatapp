@@ -9,14 +9,14 @@ using System.Data;
 
 namespace Chatappapi.Repository
 {
-    public class Authencation : IAuthentication
+    public class Authentication : IAuthentication
     {
         private readonly SqlConnectionFactory _databaseconnection;
-        public Authencation(SqlConnectionFactory db)
+        public Authentication(SqlConnectionFactory db)
         {
             _databaseconnection = db;
         }
-        public async Task<int> UserData(LoginDTo login)
+        public async Task<LoginDTo> UserData(LoginDTo login)
         {
             try
             {
@@ -26,19 +26,19 @@ namespace Chatappapi.Repository
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("email", email);
                 parameters.Add("password", password);
-                var result =  await db.QueryFirstOrDefaultAsync<int>("CheckUserExist", parameters, commandType: CommandType.StoredProcedure);
-                if (result == 1)
+                var result =  await db.QueryFirstOrDefaultAsync<LoginDTo>("CheckUserExist", parameters, commandType: CommandType.StoredProcedure);
+                if (result !=null)
                 {
-                    return 1;
+                    return result;
                 }
                 else
                 {
-                    return 0;
+                    return null;
                 }
             }
             catch (Exception ex)
             {
-                return 0;
+                return null;
             }
             
         }
@@ -70,7 +70,24 @@ namespace Chatappapi.Repository
 
             }
         }
-        
+        public  string saveRefreshToken(String refreshtoken,Guid id)
+        {
+            try
+            {
+                var db = _databaseconnection.OpenSqlConnection();
+                var uid = id;
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("uid",uid);
+                parameters.Add("refreshtoken",refreshtoken);
+                var result =  db.QueryFirst("saveRefreshToken",parameters,commandType:CommandType.StoredProcedure);
+                if(result == 1)
+                {
+                    return refreshtoken;
+                }
+                return null;
+            }
+            catch { return null; }
+        }
         public String otpGenerate()
         {
             Random rand = new Random();

@@ -5074,19 +5074,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jagan\\.nuget\\packages\\": {}
+    "C:\\Users\\saran\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+      "projectUniqueName": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
       "projectName": "Chatappapi",
-      "projectPath": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\Chatappapi.csproj",
-      "packagesPath": "C:\\Users\\jagan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jagan\\Desktop\\Chatapp\\Chatappapi\\obj\\",
+      "projectPath": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+      "packagesPath": "C:\\Users\\saran\\.nuget\\packages\\",
+      "outputPath": "D:\\my projects\\Chatapp\\Chatappapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jagan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\saran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
