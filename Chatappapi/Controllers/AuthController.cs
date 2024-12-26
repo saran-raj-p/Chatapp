@@ -13,10 +13,10 @@ namespace Chatappapi.Controllers
         private readonly IAuthentication _Authentication;
         private readonly AuthServices _AuthServices;
         
-        public AuthController(IAuthentication authentication,AuthServices authServices)
+        public AuthController(IAuthentication Authentication,AuthServices AuthServices)
         {
-            _Authentication = authentication;
-            _AuthServices = authServices;
+            _Authentication = Authentication;
+            _AuthServices = AuthServices;
         }
         [HttpPost("UserRegistration")]
         public async Task<IActionResult> Registration(RegisterDto userdata)
@@ -27,10 +27,10 @@ namespace Chatappapi.Controllers
                 if (result != null)
                 {
 
-                    LoginDTo user = new LoginDTo();
+                    /*LoginDTo user = new LoginDTo();
                     user.Email = userdata.Email;
                     user.Password = userdata.Password;
-                    await UserLogin(user);
+                    await UserLogin(user);*/
                     return Ok(new {Message="User Registration Sucessful"});
                 }
                 return BadRequest(new { Message = "User Registration Failed" });
@@ -44,14 +44,15 @@ namespace Chatappapi.Controllers
         [HttpPost("UserLogin")]
         public async Task<IActionResult> UserLogin(LoginDTo userdata)
         {
-            var email = userdata.Email;
-            var password = userdata.Password;
-            var checkIfUserExists = await _Authentication.UserData(userdata);
             
-                if (checkIfUserExists == 1)
+            var checkIfUserExists = await _Authentication.UserData(userdata);
+                
+                if (checkIfUserExists !=null)
                 {
-               var AuthToken = _AuthServices.GenerateToken(userdata);
-                return Ok(new {token=AuthToken});
+               var AuthToken = _AuthServices.GenerateToken(checkIfUserExists);
+                var refreshtoken = _AuthServices.generateRefreshToken(AuthToken);
+                _Authentication.saveRefreshToken(refreshtoken,checkIfUserExists.UserId);
+                return Ok(new {AccessToken=AuthToken,RefreshToken=refreshtoken});
                 }
             return BadRequest();
         }

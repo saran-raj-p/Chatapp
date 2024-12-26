@@ -1,3 +1,4 @@
+using Chatappapi.Helpers;
 using Chatappapi.Interface;
 using Chatappapi.Model;
 using Chatappapi.Repository;
@@ -6,6 +7,7 @@ using management_system_backend_api.Database.SqlConnectionPlace;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,19 +23,23 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
-        ValidateIssuerSigningKey = true
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["jwt:Issuer"],
+        ValidAudience = builder.Configuration["jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["jwt:Key"]))
     };
 });
 builder.Services.AddAuthorization();
 
 // Add Repository and Interface to a Containera
-builder.Services.AddScoped<IAuthentication,Authencation>();
+builder.Services.AddScoped<IAuthentication,Authentication>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<AuthServices>();
 
 //Add SqlConnectionPlace
 builder.Services.AddScoped<SqlConnectionFactory>();
-
+builder.Services.AddSingleton<AuthSettings>(sp =>
+    new AuthSettings(sp.GetRequiredService<IConfiguration>()));
 
 //Add Cors Policy
 builder.Services.AddCors(options =>

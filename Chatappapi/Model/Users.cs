@@ -15,7 +15,6 @@ namespace Chatappapi.Model
 
     }
     public class RegisterDto {
-        public Guid Id { get; set; }
         public String Name { get; set; }
         public String Email {  get; set; }
         public String Password {  get; set; }
@@ -23,6 +22,7 @@ namespace Chatappapi.Model
     };
     public class LoginDTo
     {
+       public Guid UserId { get; set; }
         [Required]
         public string Email { get; set; }
         [Required]
