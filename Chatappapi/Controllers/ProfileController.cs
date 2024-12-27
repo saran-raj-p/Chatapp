@@ -21,5 +21,20 @@ namespace Chatappapi.Controllers
             var profileData = await _profileRepository.GetProfileData(id);            
             return Ok(new { Data = profileData }); 
         }
+
+        [HttpPost("updateProfile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] updateProfile model)
+        {
+            try
+            {
+                await _profileRepository.UpdateProfileData(model);
+                return Ok(new { message = "Profile updated successfully." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred while updating the profile. Please try again later." });
+            }
+            
+        }
     }
 }

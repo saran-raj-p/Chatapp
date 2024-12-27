@@ -46,9 +46,17 @@ namespace Chatappapi.Model
 
         public string ResetToken { get; set; }
     }
-    public class GetProfile
+    public class updateProfile
     {
         public Guid Id { get; set; }
+
+        public string Name {  get; set; }
+
+        public string Email { get; set; }
+
+        public string Phone { get; set; }
+
+        public string ProfileUrl { get; set; }
     }
 }
 
