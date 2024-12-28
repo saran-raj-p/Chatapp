@@ -29,7 +29,7 @@ public class ProfileRepository : IProfileRepository
         return result;
     }
 
-    public async Task<int?> UpdateProfileData(updateProfile model)
+    public async Task<int?> UpdateProfileData(updateProfile model, string profileUrl)
     {
         try
         {
@@ -42,7 +42,7 @@ public class ProfileRepository : IProfileRepository
             parameters.Add("name", model.Name);
             parameters.Add("email", model.Email);
             parameters.Add("phone", model.Phone);
-            parameters.Add("profileUrl", model.ProfileUrl);
+            parameters.Add("profileUrl", profileUrl);
 
             
             var result = await databaseConnection.QueryFirstOrDefaultAsync<int?>(

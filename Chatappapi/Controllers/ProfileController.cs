@@ -1,5 +1,6 @@
 ﻿using Chatappapi.Interface;
 using Chatappapi.Model;
+using Chatappapi.services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,11 @@ namespace Chatappapi.Controllers
     public class ProfileController : ControllerBase
     {
         private readonly IProfileRepository _profileRepository;
+        private readonly ProfileCloudService _profileCloudService;
 
-        public ProfileController(IProfileRepository profileRepository) {
+        public ProfileController(IProfileRepository profileRepository, ProfileCloudService profileCloudService ) {
             _profileRepository = profileRepository;
+            _profileCloudService = profileCloudService; 
         }
 
         [HttpGet("getprofile")] 
@@ -23,18 +26,24 @@ namespace Chatappapi.Controllers
         }
 
         [HttpPost("updateProfile")]
-        public async Task<IActionResult> UpdateProfile([FromBody] updateProfile model)
+        public async Task<IActionResult> UpdateProfile(IFormFile image, [FromForm] updateProfile model)
         {
+            if (image == null || image.Length == 0)
+            {
+                return BadRequest(new { message = "No image file uploaded." });
+            }
             try
             {
-                await _profileRepository.UpdateProfileData(model);
+                var profileUrl = await _profileCloudService.uploadImageToCloud(image);
+
+                await _profileRepository.UpdateProfileData(model, profileUrl);
                 return Ok(new { message = "Profile updated successfully." });
             }
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = "An error occurred while updating the profile. Please try again later." });
             }
-            
+
         }
     }
 }

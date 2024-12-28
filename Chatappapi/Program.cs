@@ -36,12 +36,17 @@ builder.Services.AddScoped<IAuthentication,Authentication>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IForgotPasswordRepository, ForgotPasswordRepository>();
 
+//Add Services
+builder.Services.AddScoped<ProfileCloudService>();
 builder.Services.AddScoped<AuthServices>();
 
 //Add SqlConnectionPlace
 builder.Services.AddScoped<SqlConnectionFactory>();
+
+// Add Helper Service
 builder.Services.AddSingleton<AuthSettings>(sp =>
     new AuthSettings(sp.GetRequiredService<IConfiguration>()));
+builder.Services.AddSingleton<ProfileHelperService>();
 
 //Add Cors Policy
 builder.Services.AddCors(options =>
