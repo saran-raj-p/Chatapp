@@ -56,7 +56,7 @@ namespace Chatappapi.Model
 
         public string Phone { get; set; }
 
-        public string ProfileUrl { get; set; }
+        
     }
 }
 

@@ -7,6 +7,6 @@ namespace Chatappapi.Interface
     {
         public  Task<Users?> GetProfileData(Guid model);
 
-        public Task<int?> UpdateProfileData(updateProfile model);
+        public Task<int?> UpdateProfileData(updateProfile model, string profileUrl);
     }
 }
