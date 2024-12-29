@@ -94,6 +94,25 @@ namespace Chatappapi.Repository
             var otp = rand.Next(100000,999999);
             return otp.ToString();
         }
-        
+        public async Task<Getotp?> UserActivation(Getotp activation)
+        {
+            var db = _databaseconnection.OpenSqlConnection();
+
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@email", activation.Email);
+            parameters.Add("@otp", activation.otp);
+
+            try
+            {
+
+                await db.ExecuteAsync("UserActivation", parameters, commandType: CommandType.StoredProcedure);
+                return new Getotp { Email = activation.Email, otp = activation.otp };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("User activation failed: ");
+            }
+        }
+
     }
 }

@@ -65,6 +65,20 @@ namespace Chatappapi.Controllers
                 return Unauthorized("Invalid Username or Password");
              }
         }
+        [HttpPost("UserActivation")]
+        public async Task<ActionResult> UserActivation(Getotp getotp)
+        {
+            try
+            {
+                await _Authentication.UserActivation(getotp);
+                return Ok(new { Message = "User successfully activated." });
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new { Message = "Invaild otp" });
+            }
+        }
 
     }
 }

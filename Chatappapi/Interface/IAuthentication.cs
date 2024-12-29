@@ -10,5 +10,6 @@ namespace Chatappapi.Interface
             public Task<LoginDTo> UserRegister(RegisterDto register);
             public string saveRefreshToken(String refreshtoken, Guid id);
             public String otpGenerate();
+            public Task<Getotp> UserActivation(Getotp getotp);
     }
 }
