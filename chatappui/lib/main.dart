@@ -10,7 +10,7 @@ void main() {
     initialRoute: '/getstarted',
     routes: {
       '/Main': (context) => const MainApp(),
-      '/login': (context) => const Login(),
+      '/login': (context) => Login(),
       '/register': (context) => const Register(),
       '/profile': (context) => Profile(),
       '/getstarted': (context) => const GetStarted(),

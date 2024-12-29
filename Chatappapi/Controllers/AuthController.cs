@@ -33,7 +33,7 @@ namespace Chatappapi.Controllers
                     await UserLogin(user);*/
                     return Ok(new {Message="User Registration Sucessful"});
                 }
-                return BadRequest(new { Message = "User Registration Failed" });
+                return StatusCode(404,new {Message="Invalid Email or Password"});
             }
             catch (Exception ex)
             {
@@ -44,17 +44,26 @@ namespace Chatappapi.Controllers
         [HttpPost("UserLogin")]
         public async Task<IActionResult> UserLogin(LoginDTo userdata)
         {
-            
-            var checkIfUserExists = await _Authentication.UserData(userdata);
-                
-                if (checkIfUserExists !=null)
+            try
+            {
+
+                var checkIfUserExists = await _Authentication.UserData(userdata);
+
+                if (checkIfUserExists != null)
                 {
-               var AuthToken = _AuthServices.GenerateToken(checkIfUserExists);
-                var refreshtoken = _AuthServices.generateRefreshToken(AuthToken);
-                _Authentication.saveRefreshToken(refreshtoken,checkIfUserExists.UserId);
-                return Ok(new {AccessToken=AuthToken,RefreshToken=refreshtoken});
+                    var AuthToken = _AuthServices.GenerateToken(checkIfUserExists);
+                    var refreshtoken = _AuthServices.generateRefreshToken(AuthToken);
+                    _Authentication.saveRefreshToken(refreshtoken, checkIfUserExists.UserId);
+                    return Ok(new { AccessToken = AuthToken, RefreshToken = refreshtoken });
                 }
-            return BadRequest();
+                else {
+                    return StatusCode(500);
+                }
+                
+            }
+            catch (Exception ex) {
+                return Unauthorized("Invalid Username or Password");
+             }
         }
 
     }
