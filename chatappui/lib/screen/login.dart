@@ -1,15 +1,15 @@
 import 'dart:convert';
 
-import 'package:chatappui/httpservices/httpmethods.dart' as data;
+import 'package:chatappui/services/httpmethods.dart' as data;
+import 'package:chatappui/services/localstoragemethods.dart';
 import 'package:flutter/material.dart';
 import 'package:chatappui/screen/forgotpassword.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
   final userNameController = new TextEditingController();
   final userPasswordController = new TextEditingController();
+  final localstoragemethods local = new localstoragemethods();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,8 +49,7 @@ class Login extends StatelessWidget {
                   // Navigate to ForgotPassword page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) =>  Forgotpassword()),
+                    MaterialPageRoute(builder: (context) => Forgotpassword()),
                   );
                 },
                 child: Text(
@@ -73,11 +72,8 @@ class Login extends StatelessWidget {
                       .postWithData('Auth/UserLogin/', body);
                   if (response.statusCode == 200) {
                     var resource = jsonDecode(response.body);
-                    // SharedPreferences prefs =
-                    //     await SharedPreferences.getInstance();
-                    // prefs.setString('Access', resource['accessToken']);
-                    // prefs.setString('Refresh', resource['refreshToken']);
-                    // print(prefs.get('Access'));
+                    local.setLocal('Access', resource['accessToken']);
+                    local.setLocal('Refresh', resource['refreshToken']);
                     ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Login Successful')));
                   } else {
