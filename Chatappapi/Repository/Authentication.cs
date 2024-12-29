@@ -18,23 +18,23 @@ namespace Chatappapi.Repository
         }
         public async Task<LoginDTo> UserData(LoginDTo login)
         {
+            if(login == null || string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Password))
+            {
+                throw new ArgumentNullException("Invalid Data");
+            }
             try
             {
-                var db = _databaseconnection.OpenSqlConnection();
+                
+                using var db = _databaseconnection.OpenSqlConnection();
                 var email = login.Email;
                 var password = login.Password;
                 DynamicParameters parameters = new DynamicParameters();
                 parameters.Add("email", email);
                 parameters.Add("password", password);
                 var result =  await db.QueryFirstOrDefaultAsync<LoginDTo>("CheckUserExist", parameters, commandType: CommandType.StoredProcedure);
-                if (result !=null)
-                {
-                    return result;
-                }
-                else
-                {
-                    return null;
-                }
+                
+                return result;
+                
             }
             catch (Exception ex)
             {
