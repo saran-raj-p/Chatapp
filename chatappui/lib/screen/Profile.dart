@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+import '../services/httpmethods.dart' as dataService;
+import '../services/localstoragemethods.dart' as localStorage;
 import '../model/ProfileModel.dart';
 
 class Profile extends StatefulWidget {
@@ -34,26 +34,23 @@ class _ProfileState extends State<Profile> {
   ];
 
   void getProfile() async {
-    try {
-      final url = Uri.parse(
-          'https://localhost:7165/api/Profile/getprofile?id=014A619A-9655-40BD-BB6F-55C2295022A5');
+    String id = "014A619A-9655-40BD-BB6F-55C2295022A5";
 
-      final response = await http.get(url);
+    final response =
+        await dataService.httpmethods().getData('Profile/getprofile?id=$id');
 
-      if (response.statusCode == 200) {
-        final Map<String, dynamic> data = json.decode(response.body);
+    if (response.containsKey('data')) {
+      final Map<String, dynamic> data = response;
 
-        setState(() {
-          profile = ProfileModel.fromJson(data['data']);
-        });
-      } else {
-        print(
-            'Failed to load profile data. Status code: ${response.statusCode}');
-      }
+      setState(() {
+        profile = ProfileModel.fromJson(data['data']);
+      });
 
-      print('Profile data: ${response.statusCode}');
-    } catch (err) {
-      print('Error: $err');
+      localStorage
+          .localstoragemethods()
+          .setLocal("ProfileUrl", profile?.profileUrl);
+    } else {
+      print('Failed to load profile data.');
     }
   }
 
