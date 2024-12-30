@@ -57,13 +57,13 @@ namespace Chatappapi.services
             return handler.WriteToken(token);
         }
         // get data from the token
-        public ClaimsPrincipal claimsPrincipalFrom(string token) {
+        public  ClaimsPrincipal claimsPrincipalFrom(string token) {
             var tokenhandler = new JwtSecurityTokenHandler();
             var parameters = new TokenValidationParameters
             {
                 ValidateIssuer = true,
                 ValidateAudience = true,
-                ValidateLifetime = false,
+                ValidateLifetime = true,
                 ValidIssuer = _authSettings.Issuer,
                 ValidAudience = _authSettings.Audience,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authSettings.PrivateKey))

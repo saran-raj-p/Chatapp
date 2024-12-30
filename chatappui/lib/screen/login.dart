@@ -74,8 +74,11 @@ class Login extends StatelessWidget {
                     var resource = jsonDecode(response.body);
                     local.setLocal('Access', resource['accessToken']);
                     local.setLocal('Refresh', resource['refreshToken']);
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Login Successful')));
+                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      content: Text('Login Successful'),
+                      duration: Durations.extralong4,
+                    ));
+                    Navigator.pushNamed(context, '/profile');
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text('Login Failed Invalid Credentials')));

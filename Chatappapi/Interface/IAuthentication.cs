@@ -11,5 +11,6 @@ namespace Chatappapi.Interface
             public string saveRefreshToken(String refreshtoken, Guid id);
             public String otpGenerate();
             public Task<Getotp> UserActivation(Getotp getotp);
+            public  Task<bool> validateRefreshToken(String token);
     }
 }

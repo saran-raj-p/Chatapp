@@ -3,6 +3,7 @@ using Chatappapi.Model;
 using Chatappapi.services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Chatappapi.Controllers
 {
@@ -78,6 +79,29 @@ namespace Chatappapi.Controllers
 
                 return BadRequest(new { Message = "Invaild otp" });
             }
+        }
+        [HttpPost("ExpiredToken")]
+        public async Task<ActionResult> RegenerateAccessToken(String token)
+        {
+            try
+            {
+                var validate = await _Authentication.validateRefreshToken(token);
+                if (validate == true)
+                {
+                    ClaimsPrincipal principal =  _AuthServices.claimsPrincipalFrom(token);
+                    var accessToken = _AuthServices.generateAccessToken(principal);
+                    return Ok(new { AccessToken = accessToken });
+
+                }
+                else
+                {
+                    return NotFound(new { Message = "Invalid Token" });
+                }
+            }
+            catch (Exception ex) {
+                return StatusCode(500, new {ex.Message});   
+            }
+            
         }
 
     }
