@@ -1,11 +1,16 @@
 ﻿
 using Chatappapi.Interface;
 using Chatappapi.Model;
+using Chatappapi.services;
 using Dapper;
 using management_system_backend_api.Database.SqlConnectionPlace;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.ObjectPool;
 using System.Data;
+using System.Data.SqlClient;
+using System.Text;
 
 namespace Chatappapi.Repository
 {
@@ -111,6 +116,22 @@ namespace Chatappapi.Repository
             catch (Exception ex)
             {
                 throw new Exception("User activation failed: ");
+            }
+        }
+        public async Task<bool> validateRefreshToken(String token)
+        {
+            var db = _databaseconnection.OpenSqlConnection();
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("token", token);
+            try
+            {
+                var result = await db.QueryFirstAsync<bool>("TokenValidation", parameters, commandType: CommandType.StoredProcedure);
+                
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
 
