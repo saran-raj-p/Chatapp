@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:chatappui/services/httpmethods.dart' as data;
 import 'package:chatappui/services/localstoragemethods.dart';
 import 'package:flutter/material.dart';
@@ -71,13 +70,14 @@ class Login extends StatelessWidget {
                       .httpmethods()
                       .postWithData('Auth/UserLogin/', body);
                   if (response.statusCode == 200) {
-                    var resource = jsonDecode(response.body);
+                    var resource = response.data;
                     local.setLocal('Access', resource['accessToken']);
                     local.setLocal('Refresh', resource['refreshToken']);
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Login Successful'),
                       duration: Durations.extralong4,
                     ));
+
                     Navigator.pushNamed(context, '/profile');
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

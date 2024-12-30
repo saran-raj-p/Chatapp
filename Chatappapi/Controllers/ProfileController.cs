@@ -1,13 +1,16 @@
 ﻿using Chatappapi.Interface;
 using Chatappapi.Model;
 using Chatappapi.services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chatappapi.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProfileController : ControllerBase
     {
         private readonly IProfileRepository _profileRepository;
