@@ -1,4 +1,5 @@
 import 'package:chatappui/screen/Profile.dart';
+import 'package:chatappui/screen/edit_profile.dart';
 import 'package:chatappui/screen/get_started.dart';
 import 'package:chatappui/screen/login.dart';
 import 'package:chatappui/screen/register.dart';
@@ -15,7 +16,8 @@ void main() {
       '/register': (context) => const Register(),
       '/profile': (context) => Profile(),
       '/getstarted': (context) => const GetStarted(),
-      '/forgot': (context) =>  Forgotpassword(),
+      '/forgot': (context) => Forgotpassword(),
+      '/editProfile': (context) => EditProfile()
     },
   ));
 }
@@ -70,6 +72,14 @@ class MainApp extends StatelessWidget {
               },
               child: const Text(
                 "Login",
+                selectionColor: Colors.cyan,
+              )),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/editProfile');
+              },
+              child: const Text(
+                "Edit Profile",
                 selectionColor: Colors.cyan,
               ))
         ],
