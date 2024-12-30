@@ -24,27 +24,47 @@ namespace Chatappapi.Controllers
         [HttpGet("getprofile")] 
         public async Task<IActionResult> GetProfile([FromQuery]Guid id )
         {
-            var profileData = await _profileRepository.GetProfileData(id);            
-            return Ok(new { Data = profileData }); 
+            try
+            {
+                var profileData = await _profileRepository.GetProfileData(id);
+                if (profileData == null)
+                {
+                    return NotFound(new { message = "Profile Data not found"});
+                }
+                return Ok(new { Data = profileData });
+
+            }
+            catch(Exception ex) 
+            {
+                return StatusCode(500,new {message = "an error occur while fetching profile.",ex.Message});
+            }
         }
 
         [HttpPost("updateProfile")]
-        public async Task<IActionResult> UpdateProfile(IFormFile image, [FromForm] updateProfile model)
+        public async Task<IActionResult> UpdateProfile( [FromForm] updateProfile model)
         {
-            if (image == null || image.Length == 0)
-            {
-                return BadRequest(new { message = "No image file uploaded." });
-            }
             try
             {
-                var profileUrl = await _profileCloudService.uploadImageToCloud(image);
+                string? profileUrl = null;
 
-                await _profileRepository.UpdateProfileData(model, profileUrl);
+                if (model.Image != null) 
+                {
+                     profileUrl = await _profileCloudService.uploadImageToCloud(model.Image);
+                }
+                    
+                var result = await _profileRepository.UpdateProfileData(model, profileUrl);
+
+                if (result != 1)
+                {
+                    return BadRequest(new { message = "Profile update Failed. Try agin" });
+                }
+
                 return Ok(new { message = "Profile updated successfully." });
+
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "An error occurred while updating the profile. Please try again later." });
+                return StatusCode(500, new { message = "An error occurred while updating the profile. Please try again later.",ex.Message });
             }
 
         }

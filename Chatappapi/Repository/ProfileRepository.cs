@@ -18,18 +18,25 @@ public class ProfileRepository : IProfileRepository
 
     public async Task<Users?> GetProfileData(Guid model)
     {
-        var databaseConnection = _connectionFactory.OpenSqlConnection();
+        try
+        {
+            var databaseConnection = _connectionFactory.OpenSqlConnection();
 
-        DynamicParameters parameters = new DynamicParameters();
+            DynamicParameters parameters = new DynamicParameters();
 
-        parameters.Add("id", model);
+            parameters.Add("id", model);
 
-        var result = await databaseConnection.QueryFirstOrDefaultAsync<Users>("GetProfileData", parameters,commandType: CommandType.StoredProcedure);
+            var result = await databaseConnection.QueryFirstOrDefaultAsync<Users>("GetProfileData", parameters, commandType: CommandType.StoredProcedure);
 
-        return result;
+            return result;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("An error occurred while updating the profile in database.", ex);
+        }
     }
 
-    public async Task<int?> UpdateProfileData(updateProfile model, string profileUrl)
+    public async Task<int?> UpdateProfileData(updateProfile model, string? profileUrl)
     {
         try
         {
@@ -51,8 +58,9 @@ public class ProfileRepository : IProfileRepository
                 commandType: CommandType.StoredProcedure
             );
 
-           
+
             return result;
+
         }
         catch (Exception ex)
         {

@@ -11,6 +11,7 @@ namespace Chatappapi.Model
         public string Phone { get; set; }
         public string activation { get; set; }
         public string otp { get; set; }
+        public string ProfileUrl { get; set; }
         public DateOnly Date { get; set; }
 
     }
@@ -56,7 +57,7 @@ namespace Chatappapi.Model
 
         public string Phone { get; set; }
 
-        
+        public IFormFile? Image { get; set; }
     }
     public class Getotp
     {
