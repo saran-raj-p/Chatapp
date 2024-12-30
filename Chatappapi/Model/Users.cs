@@ -58,6 +58,11 @@ namespace Chatappapi.Model
 
         
     }
+    public class Getotp
+    {
+        public String Email { get; set; }
+        public String otp { get; set; }
+    }
 }
 
 
