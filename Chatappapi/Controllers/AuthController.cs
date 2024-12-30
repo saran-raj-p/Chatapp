@@ -85,18 +85,18 @@ namespace Chatappapi.Controllers
         {
             try
             {
-                var validate = await _Authentication.validateRefreshToken(token);
+                /*var validate = await _Authentication.validateRefreshToken(token);
                 if (validate == true)
-                {
+                {*/
                     ClaimsPrincipal principal =  _AuthServices.claimsPrincipalFrom(token);
                     var accessToken = _AuthServices.generateAccessToken(principal);
                     return Ok(new { AccessToken = accessToken });
 
-                }
+                /*}
                 else
                 {
                     return NotFound(new { Message = "Invalid Token" });
-                }
+                }*/
             }
             catch (Exception ex) {
                 return StatusCode(500, new {ex.Message});   
