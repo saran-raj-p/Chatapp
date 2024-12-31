@@ -6,7 +6,7 @@ namespace Chatappapi.Interface
     public interface IAuthentication
     {
         
-            public Task<int> UserData(LoginDTo login);
+            public Task<LoginDTo> UserData(LoginDTo login);
             public Task<LoginDTo> UserRegister(RegisterDto register);
 
              public Task<bool> IsEmailRegisteredAsync(string email);
@@ -15,6 +15,10 @@ namespace Chatappapi.Interface
             public   Task<bool> ResetPasswordAsync(string email, string newPassword);
 
          public Task SendEmailAsync(string toEmail, string subject, string body);
+            public string saveRefreshToken(String refreshtoken, Guid id);
+            public String otpGenerate();
+            public Task<Getotp> UserActivation(Getotp getotp);
+            public  Task<bool> validateRefreshToken(String token);
     }
 
     public interface IEmailService

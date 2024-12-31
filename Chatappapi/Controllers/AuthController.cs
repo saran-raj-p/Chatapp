@@ -3,6 +3,7 @@ using Chatappapi.Model;
 using Chatappapi.services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Chatappapi.Controllers
 {
@@ -19,6 +20,11 @@ namespace Chatappapi.Controllers
             _Authentication = authentication;
             _AuthServices = authServices;
             _emailService = emailService;
+        
+        public AuthController(IAuthentication Authentication,AuthServices AuthServices)
+        {
+            _Authentication = Authentication;
+            _AuthServices = AuthServices;
         }
         [HttpPost("UserRegistration")]
         public async Task<IActionResult> Registration(RegisterDto userdata)
@@ -29,13 +35,13 @@ namespace Chatappapi.Controllers
                 if (result != null)
                 {
 
-                    LoginDTo user = new LoginDTo();
+                    /*LoginDTo user = new LoginDTo();
                     user.Email = userdata.Email;
                     user.Password = userdata.Password;
-                    await UserLogin(user);
+                    await UserLogin(user);*/
                     return Ok(new {Message="User Registration Sucessful"});
                 }
-                return BadRequest(new { Message = "User Registration Failed" });
+                return StatusCode(404,new {Message="Invalid Email or Password"});
             }
             catch (Exception ex)
             {
@@ -46,16 +52,63 @@ namespace Chatappapi.Controllers
         [HttpPost("UserLogin")]
         public async Task<IActionResult> UserLogin(LoginDTo userdata)
         {
-            var email = userdata.Email;
-            var password = userdata.Password;
-            var checkIfUserExists = await _Authentication.UserData(userdata);
-            
-                if (checkIfUserExists == 1)
+            try
+            {
+
+                var checkIfUserExists = await _Authentication.UserData(userdata);
+
+                if (checkIfUserExists != null)
                 {
-               var AuthToken = _AuthServices.GenerateToken(userdata);
-                return Ok(new {token=AuthToken});
+                    var AuthToken = _AuthServices.GenerateToken(checkIfUserExists);
+                    var refreshtoken = _AuthServices.generateRefreshToken(AuthToken);
+                    _Authentication.saveRefreshToken(refreshtoken, checkIfUserExists.UserId);
+                    return Ok(new { AccessToken = AuthToken, RefreshToken = refreshtoken });
                 }
-            return BadRequest();
+                else {
+                    return StatusCode(500);
+                }
+                
+            }
+            catch (Exception ex) {
+                return Unauthorized("Invalid Username or Password");
+             }
+        }
+        [HttpPost("UserActivation")]
+        public async Task<ActionResult> UserActivation(Getotp getotp)
+        {
+            try
+            {
+                await _Authentication.UserActivation(getotp);
+                return Ok(new { Message = "User successfully activated." });
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new { Message = "Invaild otp" });
+            }
+        }
+        [HttpPost("ExpiredToken")]
+        public async Task<ActionResult> RegenerateAccessToken(String token)
+        {
+            try
+            {
+                /*var validate = await _Authentication.validateRefreshToken(token);
+                if (validate == true)
+                {*/
+                    ClaimsPrincipal principal =  _AuthServices.claimsPrincipalFrom(token);
+                    var accessToken = _AuthServices.generateAccessToken(principal);
+                    return Ok(new { AccessToken = accessToken });
+
+                /*}
+                else
+                {
+                    return NotFound(new { Message = "Invalid Token" });
+                }*/
+            }
+            catch (Exception ex) {
+                return StatusCode(500, new {ex.Message});   
+            }
+            
         }
 
         [HttpPost("sendotp")]
