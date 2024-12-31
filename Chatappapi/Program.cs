@@ -4,8 +4,10 @@ using Chatappapi.Repository;
 using Chatappapi.services;
 using management_system_backend_api.Database.SqlConnectionPlace;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using static Chatappapi.Repository.Authencation;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -30,6 +32,8 @@ builder.Services.AddAuthorization();
 builder.Services.AddScoped<IAuthentication,Authencation>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<AuthServices>();
+builder.Services.AddScoped<IPasswordHasher<object>, PasswordHasher<object>>();
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 //Add SqlConnectionPlace
 builder.Services.AddScoped<SqlConnectionFactory>();
