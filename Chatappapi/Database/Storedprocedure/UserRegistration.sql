@@ -10,7 +10,7 @@ GO
 
 
 
-ALTER PROCEDURE [dbo].[UserRegistration]
+create PROCEDURE [dbo].[UserRegistration]
 	@uid uniqueidentifier,
 	@name varchar(255),
 	@password varchar(255),
