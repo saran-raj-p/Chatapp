@@ -52,23 +52,7 @@ namespace Chatappapi.Model
     }
 
 
-    public class GetProfile
-    public class ForgotDTo
-    {
-
-        [Required]
-
-        public string Email { get; set; }
-        [Required]
-
-        public string NewPassword { get; set; }
-
-        [Required]
-
-        public string ConfirmPassword { get; set; }
-
-        public string ResetToken { get; set; }
-    }
+   
     public class updateProfile
     {
         public Guid Id { get; set; }

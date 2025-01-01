@@ -21,10 +21,7 @@ namespace Chatappapi.Controllers
             _AuthServices = authServices;
             _emailService = emailService;
         
-        public AuthController(IAuthentication Authentication,AuthServices AuthServices)
-        {
-            _Authentication = Authentication;
-            _AuthServices = AuthServices;
+        
         }
         [HttpPost("UserRegistration")]
         public async Task<IActionResult> Registration(RegisterDto userdata)
