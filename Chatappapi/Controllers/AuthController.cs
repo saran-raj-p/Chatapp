@@ -24,17 +24,23 @@ namespace Chatappapi.Controllers
         {
             try
             {
-                var result = await _Authentication.UserRegister(userdata);
-                if (result != null)
+                if(string.IsNullOrEmpty(userdata.Name)&& string.IsNullOrEmpty(userdata.Email)&& string.IsNullOrEmpty(userdata.Phone)&& string.IsNullOrEmpty(userdata.Password))
                 {
+                    var result = await _Authentication.UserRegister(userdata);
+                    if (result != null)
+                    {
 
-                    /*LoginDTo user = new LoginDTo();
-                    user.Email = userdata.Email;
-                    user.Password = userdata.Password;
-                    await UserLogin(user);*/
-                    return Ok(new {Message="User Registration Sucessful"});
+                        /*LoginDTo user = new LoginDTo();
+                        user.Email = userdata.Email;
+                        user.Password = userdata.Password;
+                        await UserLogin(user);*/
+                        return Ok(new { Message = "User Registration Sucessful" });
+                    }
                 }
-                return StatusCode(404,new {Message="Invalid Email or Password"});
+                
+               
+                
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -85,18 +91,18 @@ namespace Chatappapi.Controllers
         {
             try
             {
-                /*var validate = await _Authentication.validateRefreshToken(token);
+                var validate = await _Authentication.validateRefreshToken(token);
                 if (validate == true)
-                {*/
+                {
                     ClaimsPrincipal principal =  _AuthServices.claimsPrincipalFrom(token);
                     var accessToken = _AuthServices.generateAccessToken(principal);
                     return Ok(new { AccessToken = accessToken });
 
-                /*}
+               }
                 else
                 {
                     return NotFound(new { Message = "Invalid Token" });
-                }*/
+                }
             }
             catch (Exception ex) {
                 return StatusCode(500, new {ex.Message});   
