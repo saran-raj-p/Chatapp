@@ -12,10 +12,10 @@ void main() {
     routes: {
       '/Main': (context) => const MainApp(),
       '/login': (context) => Login(),
-      '/register': (context) => const Register(),
+      '/register': (context) => Register(),
       '/profile': (context) => Profile(),
       '/getstarted': (context) => const GetStarted(),
-      '/forgot': (context) =>  Forgotpassword(),
+      '/forgot': (context) => Forgotpassword(),
     },
   ));
 }

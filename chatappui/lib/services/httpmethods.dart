@@ -77,7 +77,7 @@ class httpmethods {
 
       if (response.statusCode == 200) {
         // Parse and return the JSON data
-        return json.decode(response.body) as Map<String, dynamic>;
+        return json.decode(response.data) as Map<String, dynamic>;
       } else {
         // Handle non-200 responses
         throw Exception('Failed to load data: ${response.statusCode}');
