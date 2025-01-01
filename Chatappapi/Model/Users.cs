@@ -31,22 +31,28 @@ namespace Chatappapi.Model
         public string Password { get; set; }
     }
 
+
+    public class EmailRequest
+    {
+        public string Email { get; set; }
+    }
+
+
+    public class OtpRequest
+    {
+        public string Email { get; set; }
+        public string Otp { get; set; }
+    }
     public class ForgotDTo
     {
-
-        [Required]
-
         public string Email { get; set; }
-        [Required]
-
-        public string NewPassword { get; set; }
-
-        [Required]
-
-        public string ConfirmPassword { get; set; }
-
         public string ResetToken { get; set; }
+        public string NewPassword { get; set; }
+        public string ConfirmPassword { get; set; }
     }
+
+
+   
     public class updateProfile
     {
         public Guid Id { get; set; }
