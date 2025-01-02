@@ -24,7 +24,7 @@ namespace Chatappapi.Controllers
         {
             try
             {
-                if(string.IsNullOrEmpty(userdata.Name)&& string.IsNullOrEmpty(userdata.Email)&& string.IsNullOrEmpty(userdata.Phone)&& string.IsNullOrEmpty(userdata.Password))
+                if(!string.IsNullOrEmpty(userdata.Name)&& !string.IsNullOrEmpty(userdata.Email)&& !string.IsNullOrEmpty(userdata.Phone)&& !string.IsNullOrEmpty(userdata.Password))
                 {
                     var result = await _Authentication.UserRegister(userdata);
                     if (result != null)
