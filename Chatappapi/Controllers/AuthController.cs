@@ -13,11 +13,15 @@ namespace Chatappapi.Controllers
     {
         private readonly IAuthentication _Authentication;
         private readonly AuthServices _AuthServices;
-        
-        public AuthController(IAuthentication Authentication,AuthServices AuthServices)
+        private readonly IEmailService _emailService;
+
+        public AuthController(IAuthentication authentication,AuthServices authServices, IEmailService emailService)
         {
-            _Authentication = Authentication;
-            _AuthServices = AuthServices;
+            _Authentication = authentication;
+            _AuthServices = authServices;
+            _emailService = emailService;
+        
+        
         }
         [HttpPost("UserRegistration")]
         public async Task<IActionResult> Registration(RegisterDto userdata)
@@ -110,5 +114,91 @@ namespace Chatappapi.Controllers
             
         }
 
+        [HttpPost("sendotp")]
+        public async Task<IActionResult> SendOtp( EmailRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Email) || !IsValidEmail(request.Email))
+            {
+                return BadRequest(new { Message = "Invalid email address." });
+            }
+
+            var isEmailRegistered = await _Authentication.IsEmailRegisteredAsync(request.Email);
+            if (!isEmailRegistered)
+            {
+                return BadRequest(new { Message = "Email is not registered." });
+            }
+
+            var otpSent = await _Authentication.SendOtpAsync(request.Email);
+            if (!otpSent)
+            {
+                return BadRequest(new { Message = "Failed to send OTP. Please try again." });
+            }
+
+            return Ok(new { Message = "OTP has been sent to your email." });
+        }
+
+        [HttpPost("verifyotp")]
+        public async Task<IActionResult> VerifyOtp( OtpRequest request)
+        {
+            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Otp))
+            {
+                return BadRequest(new { Message = "Email and OTP fields cannot be empty." });
+            }
+
+            var isValidOtp = await _Authentication.VerifyOtpAsync(request.Email, request.Otp);
+            if (!isValidOtp)
+            {
+                return BadRequest(new { Message = "Invalid or expired OTP." });
+            }
+
+            return Ok(new { Message = "OTP verified successfully." });
+        }
+
+        [HttpPost("resetpassword")]
+        public async Task<IActionResult> ResetPassword( ForgotDTo request)
+        {
+            if (string.IsNullOrEmpty(request.Email) ||
+                string.IsNullOrEmpty(request.NewPassword) ||
+                string.IsNullOrEmpty(request.ConfirmPassword))
+            {
+                return BadRequest(new { Message = "Fields cannot be empty." });
+            }
+
+            if (request.NewPassword != request.ConfirmPassword)
+            {
+                return BadRequest(new { Message = "Passwords do not match." });
+            }
+
+            if (request.NewPassword.Length < 8)
+            {
+                return BadRequest(new { Message = "Password must be at least 8 characters long." });
+            }
+
+            var result = await _Authentication.ResetPasswordAsync(request.Email, request.NewPassword);
+
+            if (!result)
+            {
+                return BadRequest(new { Message = "Unable to reset password. Please try again." });
+            }
+
+            return Ok(new { Message = "Password has been successfully updated." });
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
     }
 }
+    
+
