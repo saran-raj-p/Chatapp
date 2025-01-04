@@ -113,23 +113,32 @@ class Register extends StatelessWidget {
                             "phone": phoneController.text,
                             "password": passwordController.text,
                           };
-
-                          var response = await data
-                              .httpmethods()
-                              .postWithData('Auth/UserRegistration/', body);
-                          if (response.statusCode == 200) {
+                          bool allValuesAreEmpty = body.values.any((value) =>
+                              value == null || value.toString().trim().isEmpty);
+                          if (allValuesAreEmpty) {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
-                              content: Text("Registeration Successful"),
+                              content: Text("Please Enter Valid Input"),
                               duration: Duration(seconds: 5),
                             ));
-                            Navigator.pushNamed(context, '/login');
                           } else {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(const SnackBar(
-                              content: Text("Registeration Failed"),
-                              duration: Duration(seconds: 5),
-                            ));
+                            var response = await data
+                                .httpmethods()
+                                .postWithData('Auth/UserRegistration/', body);
+                            if (response.statusCode == 200) {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(const SnackBar(
+                                content: Text("Registeration Successful"),
+                                duration: Duration(seconds: 5),
+                              ));
+                              Navigator.pushNamed(context, '/login');
+                            } else {
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(const SnackBar(
+                                content: Text("Registeration Failed"),
+                                duration: Duration(seconds: 5),
+                              ));
+                            }
                           }
                         } catch (e) {
                           ScaffoldMessenger.of(context)
