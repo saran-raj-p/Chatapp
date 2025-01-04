@@ -13,13 +13,13 @@ namespace Chatappapi.Controllers
     {
         private readonly IAuthentication _Authentication;
         private readonly AuthServices _AuthServices;
-        private readonly IEmailService _emailService;
+        //private readonly IEmailService _emailService;
 
-        public AuthController(IAuthentication authentication,AuthServices authServices, IEmailService emailService)
+        public AuthController(IAuthentication authentication,AuthServices authServices)// IEmailService emailService)
         {
             _Authentication = authentication;
             _AuthServices = authServices;
-            _emailService = emailService;
+           // _emailService = emailService;
         
         
         }
@@ -115,20 +115,20 @@ namespace Chatappapi.Controllers
         }
 
         [HttpPost("sendotp")]
-        public async Task<IActionResult> SendOtp( EmailRequest request)
+        public async Task<IActionResult> SendOtp( EmailRequest userdata)
         {
-            if (string.IsNullOrEmpty(request.Email) || !IsValidEmail(request.Email))
+            if (string.IsNullOrEmpty(userdata.Email) || !IsValidEmail(userdata.Email))
             {
                 return BadRequest(new { Message = "Invalid email address." });
             }
 
-            var isEmailRegistered = await _Authentication.IsEmailRegisteredAsync(request.Email);
+            var isEmailRegistered = await _Authentication.IsEmailRegisteredAsync(userdata.Email);
             if (!isEmailRegistered)
             {
                 return BadRequest(new { Message = "Email is not registered." });
             }
 
-            var otpSent = await _Authentication.SendOtpAsync(request.Email);
+            var otpSent = await _Authentication.SendOtpAsync(userdata.Email);
             if (!otpSent)
             {
                 return BadRequest(new { Message = "Failed to send OTP. Please try again." });

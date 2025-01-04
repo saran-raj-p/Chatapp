@@ -21,11 +21,7 @@ namespace Chatappapi.Interface
             public  Task<bool> validateRefreshToken(String token);
     }
 
-    public interface IEmailService
-    {
-       
-    }
-
+    
 
 
 

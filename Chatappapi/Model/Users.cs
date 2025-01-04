@@ -34,6 +34,7 @@ namespace Chatappapi.Model
 
     public class EmailRequest
     {
+        [Required]
         public string Email { get; set; }
     }
 

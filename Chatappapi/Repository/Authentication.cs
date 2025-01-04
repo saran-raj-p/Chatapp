@@ -136,16 +136,17 @@ namespace Chatappapi.Repository
             }
         }
 
-        public async Task<bool> IsEmailRegisteredAsync(string email)
+        public async Task<bool> IsEmailRegisteredAsync(EmailRequest userdata)
         {
             try
             {
                 var db = _databaseconnection.OpenSqlConnection();
                 DynamicParameters parameters = new DynamicParameters();
+                var email = userdata.Email;
                 parameters.Add("email", email);
 
-                var result = await db.QueryFirstOrDefaultAsync<int>("CheckEmailExists", parameters, commandType: CommandType.StoredProcedure);
-                return result == 1;
+                var result = await db.QueryFirstOrDefaultAsync<EmailRequest>("CheckEmailExists", parameters, commandType: CommandType.StoredProcedure);
+                return true;
             }
             catch (Exception ex)
             {
@@ -240,20 +241,9 @@ namespace Chatappapi.Repository
 
         }
 
-        public class EmailService : IEmailService
+        public Task<bool> IsEmailRegisteredAsync(string email)
         {
-            public async Task SendEmailAsync(string to, string subject, string body)
-            {
-                // Logic for sending email, e.g., using SMTP, SendGrid, etc.
-                // Make sure to send the email asynchronously.
-
-                // For example, using an SMTP client:
-                var smtpClient = new SmtpClient();
-                var message = new MailMessage("from@example.com", to, subject, body);
-                await smtpClient.SendMailAsync(message);
-            }
+            throw new NotImplementedException();
         }
-
-
     }
 }
