@@ -136,17 +136,17 @@ namespace Chatappapi.Repository
             }
         }
 
-        public async Task<bool> IsEmailRegisteredAsync(EmailRequest userdata)
+        public async Task<bool> IsEmailRegisteredAsync(string email)
         {
             try
             {
                 var db = _databaseconnection.OpenSqlConnection();
                 DynamicParameters parameters = new DynamicParameters();
-                var email = userdata.Email;
+               
                 parameters.Add("email", email);
 
-                var result = await db.QueryFirstOrDefaultAsync<EmailRequest>("CheckEmailExists", parameters, commandType: CommandType.StoredProcedure);
-                return true;
+                var result = await db.QueryFirstOrDefaultAsync<bool>("CheckEmailExists", parameters, commandType: CommandType.StoredProcedure);
+                return result;
             }
             catch (Exception ex)
             {
@@ -169,12 +169,10 @@ namespace Chatappapi.Repository
                 //  parameters.Add("otpExpiry", expiration);
 
                 var result = await db.ExecuteAsync("SaveOtp", parameters, commandType: CommandType.StoredProcedure);
-
-                if (result > 0)
-                {
-                    await SendEmailAsync(email, "Your OTP Code", $"Your OTP is {otp}");
-                    return true;
+                if (result == 1) {
+                       return true;
                 }
+
                 return false;
             }
             catch (Exception ex)
@@ -206,16 +204,16 @@ namespace Chatappapi.Repository
         }
 
 
-        public async Task SendEmailAsync(string to, string subject, string body)
-        {
+      //  public async Task SendEmailAsync(string to, string subject, string body)
+       // {
             // Logic for sending email, e.g., using SMTP, SendGrid, etc.
             // Make sure to send the email asynchronously.
 
             // For example, using an SMTP client:
-            var smtpClient = new SmtpClient();
-            var message = new MailMessage("from@example.com", to, subject, body);
-            await smtpClient.SendMailAsync(message);
-        }
+        //    var smtpClient = new SmtpClient();
+          //  var message = new MailMessage("from@example.com", to, subject, body);
+          // await smtpClient.SendMailAsync(message);
+        //}
 
         public async Task<bool> ResetPasswordAsync(string email, string newPassword)
         {
@@ -241,9 +239,6 @@ namespace Chatappapi.Repository
 
         }
 
-        public Task<bool> IsEmailRegisteredAsync(string email)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

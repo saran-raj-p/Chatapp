@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using static Chatappapi.Repository.Authencation;
+
 using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,7 +42,7 @@ builder.Services.AddScoped<IForgotPasswordRepository, ForgotPasswordRepository>(
 builder.Services.AddScoped<ProfileCloudService>();
 builder.Services.AddScoped<AuthServices>();
 builder.Services.AddScoped<IPasswordHasher<object>, PasswordHasher<object>>();
-builder.Services.AddTransient<IEmailService, EmailService>();
+//builder.Services.AddTransient<IEmailService, EmailService>();
 
 //Add SqlConnectionPlace
 builder.Services.AddScoped<SqlConnectionFactory>();

@@ -15,7 +15,7 @@ namespace Chatappapi.Controllers
         private readonly AuthServices _AuthServices;
         //private readonly IEmailService _emailService;
 
-        public AuthController(IAuthentication authentication,AuthServices authServices)// IEmailService emailService)
+        public AuthController(IAuthentication authentication,AuthServices authServices)
         {
             _Authentication = authentication;
             _AuthServices = authServices;
@@ -28,8 +28,8 @@ namespace Chatappapi.Controllers
         {
             try
             {
-                if(string.IsNullOrEmpty(userdata.Name)&& string.IsNullOrEmpty(userdata.Email)&& string.IsNullOrEmpty(userdata.Phone)&& string.IsNullOrEmpty(userdata.Password))
-                {
+                /*if(string.IsNullOrEmpty(userdata.Name)&& string.IsNullOrEmpty(userdata.Email)&& string.IsNullOrEmpty(userdata.Phone)&& string.IsNullOrEmpty(userdata.Password))
+                {*/
                     var result = await _Authentication.UserRegister(userdata);
                     if (result != null)
                     {
@@ -40,7 +40,7 @@ namespace Chatappapi.Controllers
                         await UserLogin(user);*/
                         return Ok(new { Message = "User Registration Sucessful" });
                     }
-                }
+                //}
                 
                
                 
