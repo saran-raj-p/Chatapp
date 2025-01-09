@@ -32,28 +32,8 @@ namespace Chatappapi.Model
     }
 
 
-    public class EmailRequest
-    {
-        [Required]
-        public string Email { get; set; }
-    }
-
-
-    public class OtpRequest
-    {
-        public string Email { get; set; }
-        public string Otp { get; set; }
-    }
-    public class ForgotDTo
-    {
-        public string Email { get; set; }
-        public string ResetToken { get; set; }
-        public string NewPassword { get; set; }
-        public string ConfirmPassword { get; set; }
-    }
-
-
    
+
     public class updateProfile
     {
         public Guid Id { get; set; }
@@ -70,6 +50,32 @@ namespace Chatappapi.Model
     {
         public String Email { get; set; }
         public String otp { get; set; }
+    }
+
+
+    public class ForgotPasswordDto
+    {
+        public string Email { get; set; }
+    }
+
+    public class VerifyOtpDto
+    {
+        public string Email { get; set; }
+        public string Otp { get; set; }
+    }
+
+    public class UpdatePasswordDto
+    {
+        public string Email { get; set; }
+        public string NewPassword { get; set; }
+        public string ConfirmPassword { get; set; }
+    }
+
+    public class ForgotPasswordResponse
+    {
+        public bool IsEmailExists { get; set; }
+        public string Email { get; set; }
+        public string OTP { get; set; }
     }
 }
 

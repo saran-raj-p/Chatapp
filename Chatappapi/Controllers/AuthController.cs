@@ -40,7 +40,7 @@ namespace Chatappapi.Controllers
                         await UserLogin(user);*/
                         return Ok(new { Message = "User Registration Sucessful" });
                     }
-                //}
+                }
                 
                
                 
@@ -114,91 +114,82 @@ namespace Chatappapi.Controllers
             
         }
 
-        [HttpPost("sendotp")]
-        public async Task<IActionResult> SendOtp( EmailRequest userdata)
-        {
-            if (string.IsNullOrEmpty(userdata.Email) || !IsValidEmail(userdata.Email))
-            {
-                return BadRequest(new { Message = "Invalid email address." });
-            }
-
-            var isEmailRegistered = await _Authentication.IsEmailRegisteredAsync(userdata.Email);
-            if (!isEmailRegistered)
-            {
-                return BadRequest(new { Message = "Email is not registered." });
-            }
-
-            var otpSent = await _Authentication.SendOtpAsync(userdata.Email);
-            if (!otpSent)
-            {
-                return BadRequest(new { Message = "Failed to send OTP. Please try again." });
-            }
-
-            return Ok(new { Message = "OTP has been sent to your email." });
-        }
-
-        [HttpPost("verifyotp")]
-        public async Task<IActionResult> VerifyOtp( OtpRequest request)
-        {
-            if (string.IsNullOrEmpty(request.Email) || string.IsNullOrEmpty(request.Otp))
-            {
-                return BadRequest(new { Message = "Email and OTP fields cannot be empty." });
-            }
-
-            var isValidOtp = await _Authentication.VerifyOtpAsync(request.Email, request.Otp);
-            if (!isValidOtp)
-            {
-                return BadRequest(new { Message = "Invalid or expired OTP." });
-            }
-
-            return Ok(new { Message = "OTP verified successfully." });
-        }
-
-        [HttpPost("resetpassword")]
-        public async Task<IActionResult> ResetPassword( ForgotDTo request)
-        {
-            if (string.IsNullOrEmpty(request.Email) ||
-                string.IsNullOrEmpty(request.NewPassword) ||
-                string.IsNullOrEmpty(request.ConfirmPassword))
-            {
-                return BadRequest(new { Message = "Fields cannot be empty." });
-            }
-
-            if (request.NewPassword != request.ConfirmPassword)
-            {
-                return BadRequest(new { Message = "Passwords do not match." });
-            }
-
-            if (request.NewPassword.Length < 8)
-            {
-                return BadRequest(new { Message = "Password must be at least 8 characters long." });
-            }
-
-            var result = await _Authentication.ResetPasswordAsync(request.Email, request.NewPassword);
-
-            if (!result)
-            {
-                return BadRequest(new { Message = "Unable to reset password. Please try again." });
-            }
-
-            return Ok(new { Message = "Password has been successfully updated." });
-        }
-
-        private bool IsValidEmail(string email)
+        [HttpPost("GenerateOTP")]
+        public async Task<IActionResult> GenerateOTP([FromBody] ForgotPasswordDto request)
         {
             try
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
+                if (string.IsNullOrEmpty(request.Email))
+                {
+                    return BadRequest(new { Message = "Email is required" });
+                }
+
+                var result = await _Authentication.ProcessForgotPassword(request.Email);
+                if (result.IsEmailExists)
+                {   
+                    return Ok(new { Message = "OTP generated successfully", OTP = result.OTP });
+                }
+                return NotFound(new { Message = "Email not registered" });
             }
-            catch
+            catch (Exception)
             {
-                return false;
+                return StatusCode(500, new { Message = "Internal Server Error" });
             }
         }
 
 
-    }
+
+        [HttpPost("VerifyOTP")]
+        public async Task<IActionResult> VerifyOTP([FromBody] VerifyOtpDto request)
+        {
+            try
+            {
+                var isValid = await _Authentication.VerifyOTP(request.Email, request.Otp);
+                if (isValid)
+                {
+                    return Ok(new { Message = "OTP verified successfully" });
+                }
+                return BadRequest(new { Message = "Invalid OTP" });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { Message = "Internal Server Error" });
+            }
+        }
+
+
+        [HttpPost("UpdatePassword")]
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordDto request)
+        {
+            try
+            {
+                if (request.NewPassword != request.ConfirmPassword)
+                {
+                    return BadRequest(new { Message = "Passwords do not match" });
+                }
+
+                var isUpdated = await _Authentication.UpdatePassword(request.Email, request.NewPassword);
+                if (isUpdated)
+                {
+                    return Ok(new { Message = "Password updated successfully" });
+                }
+                return BadRequest(new { Message = "Failed to update password" });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { Message = "Internal Server Error" });
+            }
+        }
+    
+
+
+
+
+
+
+
+
+}
 }
     
 
