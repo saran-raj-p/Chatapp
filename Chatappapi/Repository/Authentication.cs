@@ -136,123 +136,105 @@ namespace Chatappapi.Repository
             }
         }
 
-        public async Task<bool> IsEmailRegisteredAsync(string email)
+
+
+        public async Task<ForgotPasswordResponse> ProcessForgotPassword(string email)
         {
             try
             {
-                var db = _databaseconnection.OpenSqlConnection();
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("email", email);
+                using var db = _databaseconnection.OpenSqlConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("email", email.Trim().ToLower());
 
-                var result = await db.QueryFirstOrDefaultAsync<int>("CheckEmailExists", parameters, commandType: CommandType.StoredProcedure);
-                return result == 1;
-            }
-            catch (Exception ex)
-            {
-                // Log exception
-                return false;
-            }
-        }
+                var user = await db.QueryFirstOrDefaultAsync<LoginDTo>(
+                    "GetUserByEmail",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
 
+                if (user == null)
+                {
+                    return new ForgotPasswordResponse { IsEmailExists = false };
+                }
 
-        public async Task<bool> SendOtpAsync(string email)
-        {
-            try
-            {
                 var otp = otpGenerate();
-
-                var db = _databaseconnection.OpenSqlConnection();
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("email", email);
                 parameters.Add("otp", otp);
-                //  parameters.Add("otpExpiry", expiration);
 
-                var result = await db.ExecuteAsync("SaveOtp", parameters, commandType: CommandType.StoredProcedure);
+                var result = await db.ExecuteAsync(
+                    "UpdateForgotPasswordOTP",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
 
                 if (result > 0)
                 {
-                    await SendEmailAsync(email, "Your OTP Code", $"Your OTP is {otp}");
-                    return true;
+                    return new ForgotPasswordResponse
+                    {
+                        IsEmailExists = true,
+                        Email = email,
+                        OTP = otp
+                    };
                 }
-                return false;
+                return null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Log exception
-                return false;
+                return null;
             }
         }
 
-
-        public async Task<bool> VerifyOtpAsync(string email, string otp)
+        public async Task<bool> VerifyOTP(string email, string otp)
         {
             try
             {
-                var db = _databaseconnection.OpenSqlConnection();
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("email", email);
+                using var db = _databaseconnection.OpenSqlConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("email", email.Trim().ToLower());
                 parameters.Add("otp", otp);
 
-                var result = await db.QueryFirstOrDefaultAsync<int>("VerifyOtp", parameters, commandType: CommandType.StoredProcedure);
+                var isValid = await db.QueryFirstOrDefaultAsync<bool>(
+                    "VerifyOTP",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
 
-                return result == 1; // 1 indicates OTP is valid
+                return isValid;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Log exception
                 return false;
             }
         }
 
 
-        public async Task SendEmailAsync(string to, string subject, string body)
-        {
-            // Logic for sending email, e.g., using SMTP, SendGrid, etc.
-            // Make sure to send the email asynchronously.
-
-            // For example, using an SMTP client:
-            var smtpClient = new SmtpClient();
-            var message = new MailMessage("from@example.com", to, subject, body);
-            await smtpClient.SendMailAsync(message);
-        }
-
-        public async Task<bool> ResetPasswordAsync(string email, string newPassword)
+        public async Task<bool> UpdatePassword(string email, string newPassword)
         {
             try
             {
-                // var hashedPassword = _passwordHasher.HashPassword(newPassword);
+                using var db = _databaseconnection.OpenSqlConnection();
+                var parameters = new DynamicParameters();
+                parameters.Add("email", email.Trim().ToLower());
+                parameters.Add("password", newPassword);
 
-                var db = _databaseconnection.OpenSqlConnection();
-                DynamicParameters parameters = new DynamicParameters();
-                parameters.Add("email", email);
-                parameters.Add("newPassword", newPassword);
+                var result = await db.ExecuteAsync(
+                    "UpdatePassword",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
 
-                var result = await db.ExecuteAsync("ResetPassword", parameters, commandType: CommandType.StoredProcedure);
-
-                return result > 0; // Success if rows affected > 0
+                return result > 0;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Log exception
                 return false;
             }
-
-
         }
 
-        public class EmailService : IEmailService
-        {
-            public async Task SendEmailAsync(string to, string subject, string body)
-            {
-                // Logic for sending email, e.g., using SMTP, SendGrid, etc.
-                // Make sure to send the email asynchronously.
 
-                // For example, using an SMTP client:
-                var smtpClient = new SmtpClient();
-                var message = new MailMessage("from@example.com", to, subject, body);
-                await smtpClient.SendMailAsync(message);
-            }
-        }
+
+
+
+
 
 
     }
