@@ -1,5 +1,5 @@
 import 'dart:convert';
-
+import 'dart:io';
 import 'package:chatappui/services/localstoragemethods.dart' as localstorage;
 import 'package:dio/dio.dart';
 
@@ -11,34 +11,30 @@ class httpmethods {
       onRequest: (options, handler) async {
         final token =
             localstorage.localstoragemethods().getlocal('accessToken');
-        if (token != null) {
-          options.headers['Authorization'] = 'Bearer $token';
-        }
+        options.headers['Authorization'] = 'Bearer $token';
         return handler.next(options);
       },
       onError: (error, handler) async {
         if (error.response?.statusCode == 401) {
           final refreshToken =
               localstorage.localstoragemethods().getlocal('refreshToken');
-          if (refreshToken != null) {
-            try {
-              var refresh = await dio
-                  .post('Auth/ExpiredToken/', data: {'token': refreshToken});
-              if (refresh.statusCode == 200) {
-                final newAccessToken = refresh.data['accessToken'];
-                localstorage
-                    .localstoragemethods()
-                    .setLocal('accessToken', newAccessToken);
-                error.requestOptions.headers['Authorization'] =
-                    'Bearer $newAccessToken';
-                final retry = await dio.fetch(error.requestOptions);
-                return handler.resolve(retry);
-              } else {
-                return handler.reject(error);
-              }
-            } catch (e) {
+          try {
+            var refresh = await dio
+                .post('Auth/ExpiredToken/', data: {'token': refreshToken});
+            if (refresh.statusCode == 200) {
+              final newAccessToken = refresh.data['accessToken'];
+              localstorage
+                  .localstoragemethods()
+                  .setLocal('accessToken', newAccessToken);
+              error.requestOptions.headers['Authorization'] =
+                  'Bearer $newAccessToken';
+              final retry = await dio.fetch(error.requestOptions);
+              return handler.resolve(retry);
+            } else {
               return handler.reject(error);
             }
+          } catch (e) {
+            return handler.reject(error);
           }
         }
       },
@@ -77,7 +73,7 @@ class httpmethods {
 
       if (response.statusCode == 200) {
         // Parse and return the JSON data
-        return json.decode(response.data) as Map<String, dynamic>;
+        return response.data as Map<String, dynamic>;
       } else {
         // Handle non-200 responses
         throw Exception('Failed to load data: ${response.statusCode}');

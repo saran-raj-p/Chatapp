@@ -4,7 +4,7 @@ import '../services/localstoragemethods.dart' as localStorage;
 import '../model/ProfileModel.dart';
 
 class Profile extends StatefulWidget {
-  Profile({super.key});
+  const Profile({super.key});
 
   @override
   _ProfileState createState() => _ProfileState();
@@ -34,16 +34,16 @@ class _ProfileState extends State<Profile> {
   ];
 
   void getProfile() async {
-    String id = "014A619A-9655-40BD-BB6F-55C2295022A5";
+    String id = "62B0B91D-CB24-42D9-8B5F-C9F4C5939FDB";
 
     final response =
         await dataService.httpmethods().getData('Profile/getprofile?id=$id');
 
     if (response.containsKey('data')) {
-      final Map<String, dynamic> data = response;
+      final Map<String, dynamic> data = response['data'];
 
       setState(() {
-        profile = ProfileModel.fromJson(data['data']);
+        profile = ProfileModel.fromJson(data);
       });
 
       localStorage
@@ -73,7 +73,7 @@ class _ProfileState extends State<Profile> {
             children: [
               Text(
                 'Hello, ${profile?.name}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                 ),
               ),
@@ -140,7 +140,7 @@ class _ProfileState extends State<Profile> {
           ),
           const SizedBox(height: 60),
           const Text('Chat With Friends'),
-          Container(
+          SizedBox(
               height: 200,
               child: Card(
                 color: Colors.black,
