@@ -10,7 +10,7 @@ namespace Chatappapi.Controllers
     
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class ProfileController : ControllerBase
     {
         private readonly IProfileRepository _profileRepository;

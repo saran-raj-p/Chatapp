@@ -8,7 +8,7 @@ import 'package:dio/dio.dart';
 import 'package:mime/mime.dart';
 
 class EditProfile extends StatefulWidget {
-  EditProfile({super.key});
+  const EditProfile({super.key});
 
   @override
   State<EditProfile> createState() => _EditProfile();
@@ -64,17 +64,17 @@ class _EditProfile extends State<EditProfile> {
           mainAxisSize: MainAxisSize.min,
           children: [
             ListTile(
-              leading: Icon(Icons.photo, color: Colors.black),
-              title: Text('Select photo from gallery'),
+              leading: const Icon(Icons.photo, color: Colors.black),
+              title: const Text('Select photo from gallery'),
               onTap: () {
                 Navigator.of(context).pop();
                 pickFromGallery();
               },
             ),
-            Divider(),
+            const Divider(),
             ListTile(
-              leading: Icon(Icons.camera_alt, color: Colors.black),
-              title: Text('Take photo with camera'),
+              leading: const Icon(Icons.camera_alt, color: Colors.black),
+              title: const Text('Take photo with camera'),
               onTap: () {
                 Navigator.of(context).pop();
                 takePhoto();
@@ -95,14 +95,22 @@ class _EditProfile extends State<EditProfile> {
         'Email': emailController.text,
         'Phone': phoneNumberController.text,
         'Id':
-            '014A619A-9655-40BD-BB6F-55C2295022A5', // Replace with actual user ID
+            '62B0B91D-CB24-42D9-8B5F-C9F4C5939FDB', // Replace with actual user ID
+        // if (_pickedFile != null)
+        //   'Image': await MultipartFile.fromFile(
+        //     _pickedFile!.path,
+        //     filename: _pickedFile!.name,
+        //     contentType: MediaType.parse(
+        //         lookupMimeType(_pickedFile!.path) ?? 'image/jpeg'),
+        //   ),
+
         if (_pickedFile != null)
-          'Image': await MultipartFile.fromFile(
-            _pickedFile!.path,
+          "Image": MultipartFile.fromBytes(
+            _profileImage!,
             filename: _pickedFile!.name,
             contentType: MediaType.parse(
-                lookupMimeType(_pickedFile!.path) ?? 'image/jpeg'),
-          ),
+                lookupMimeType(_pickedFile!.name) ?? 'image/jpeg'),
+          )
       });
 
       // Use httpmethods to send the request
@@ -113,7 +121,7 @@ class _EditProfile extends State<EditProfile> {
 
       if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Profile updated successfully')),
+          const SnackBar(content: Text('Profile updated successfully')),
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -167,7 +175,7 @@ class _EditProfile extends State<EditProfile> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Edit Profile'),
+          title: const Text('Edit Profile'),
         ),
         body: Center(
           child: Column(
