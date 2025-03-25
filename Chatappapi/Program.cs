@@ -1,11 +1,15 @@
+using Chatappapi.Helpers;
 using Chatappapi.Interface;
 using Chatappapi.Model;
 using Chatappapi.Repository;
 using Chatappapi.services;
 using management_system_backend_api.Database.SqlConnectionPlace;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+
+using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,19 +25,32 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
-        ValidateIssuerSigningKey = true
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["jwt:Issuer"],
+        ValidAudience = builder.Configuration["jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["jwt:Key"]))
     };
 });
 builder.Services.AddAuthorization();
 
 // Add Repository and Interface to a Containera
-builder.Services.AddScoped<IAuthentication,Authencation>();
+builder.Services.AddScoped<IAuthentication,Authentication>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
+builder.Services.AddScoped<IForgotPasswordRepository, ForgotPasswordRepository>();
+
+//Add Services
+builder.Services.AddScoped<ProfileCloudService>();
 builder.Services.AddScoped<AuthServices>();
+builder.Services.AddScoped<IPasswordHasher<object>, PasswordHasher<object>>();
+//builder.Services.AddTransient<IEmailService, EmailService>();
 
 //Add SqlConnectionPlace
 builder.Services.AddScoped<SqlConnectionFactory>();
 
+// Add Helper Service
+builder.Services.AddSingleton<AuthSettings>(sp =>
+    new AuthSettings(sp.GetRequiredService<IConfiguration>()));
+builder.Services.AddSingleton<ProfileHelperService>();
 
 //Add Cors Policy
 builder.Services.AddCors(options =>

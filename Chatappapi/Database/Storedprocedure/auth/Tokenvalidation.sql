@@ -1,22 +1,20 @@
 
-CREATE PROCEDURE CheckUserExist 
+CREATE PROCEDURE TokenValidation
 	-- Add the parameters for the stored procedure here
-	@email varchar(255),
-	@password varchar(255)
-
+	@token varchar(1000)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
 
-    IF EXISTS(SELECT 1 FROM Chatuser WHERE email=@email and password =@password)
+    if EXISTS(select 1 from Chatuser where RefreshToken=@token)
 	BEGIN
-	SELECT 1;
+		RETURN 1
 	END
 	ELSE
 	BEGIN
-	SELECT 0;
+		RETURN 0
 	END
-END;
+END
 GO

@@ -1,7 +1,9 @@
 import 'package:chatappui/screen/Profile.dart';
+import 'package:chatappui/screen/edit_profile.dart';
 import 'package:chatappui/screen/get_started.dart';
 import 'package:chatappui/screen/login.dart';
 import 'package:chatappui/screen/register.dart';
+import 'package:chatappui/screen/forgotpassword.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,10 +12,12 @@ void main() {
     initialRoute: '/getstarted',
     routes: {
       '/Main': (context) => const MainApp(),
-      '/login': (context) => const Login(),
-      '/register': (context) => const Register(),
+      '/login': (context) => Login(),
+      '/register': (context) => Register(),
       '/profile': (context) => Profile(),
       '/getstarted': (context) => const GetStarted(),
+      '/forgot': (context) => Forgotpassword(),
+      '/editProfile': (context) => EditProfile(),
     },
   ));
 }
@@ -54,11 +58,28 @@ class MainApp extends StatelessWidget {
             ),
           ),
           TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/forgot');
+            },
+            child: const Text(
+              "Forgotpassword",
+              selectionColor: Colors.cyan,
+            ),
+          ),
+          TextButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
               child: const Text(
                 "Login",
+                selectionColor: Colors.cyan,
+              )),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/editProfile');
+              },
+              child: const Text(
+                "Edit Profile",
                 selectionColor: Colors.cyan,
               ))
         ],
