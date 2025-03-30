@@ -34,7 +34,7 @@ class _ProfileState extends State<Profile> {
   ];
 
   void getProfile() async {
-    String id = "62B0B91D-CB24-42D9-8B5F-C9F4C5939FDB";
+    String id = "B08FB381-48F7-4814-AF63-FF3B181B8CEF";
 
     final response =
         await dataService.httpmethods().getData('Profile/getprofile?id=$id');
@@ -89,11 +89,17 @@ class _ProfileState extends State<Profile> {
                           child: Row(
                             children: [Icon(Icons.home), Text("Home")],
                           )),
-                      const PopupMenuItem(
-                          value: 2,
-                          child: Row(
-                            children: [Icon(Icons.home), Text("Home")],
-                          )),
+                      PopupMenuItem(
+                        value: 2,
+                        child: const Row(
+                          children: [Icon(Icons.home), Text("Edit Profile")],
+                        ),
+                        onTap: () {
+                          Future.delayed(Duration.zero, () {
+                            Navigator.pushNamed(context, '/editProfile');
+                          });
+                        },
+                      ),
                       const PopupMenuItem(
                           value: 3,
                           child: Row(
