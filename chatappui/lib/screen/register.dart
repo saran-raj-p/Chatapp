@@ -156,6 +156,27 @@ class Register extends StatelessWidget {
                       child: const Text("Register")),
                 ),
               ),
+              GestureDetector(
+                onTap: () {
+                  // Navigate to Login page
+                  Navigator.pushNamed(context, '/login');
+                },
+                child: RichText(
+                  text: const TextSpan(
+                    style: TextStyle(color: Colors.grey),
+                    children: [
+                      TextSpan(text: 'Already have an account? '),
+                      TextSpan(
+                        text: 'Login Here...',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
