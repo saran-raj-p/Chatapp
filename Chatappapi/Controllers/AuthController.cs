@@ -65,7 +65,7 @@ namespace Chatappapi.Controllers
                     var AuthToken = _AuthServices.GenerateToken(checkIfUserExists);
                     var refreshtoken = _AuthServices.generateRefreshToken(AuthToken);
                     _Authentication.saveRefreshToken(refreshtoken, checkIfUserExists.UserId);
-                    return Ok(new { AccessToken = AuthToken, RefreshToken = refreshtoken });
+                    return Ok(new { AccessToken = AuthToken, RefreshToken = refreshtoken,Id=checkIfUserExists.UserId});
                 }
                 else {
                     return StatusCode(500);
