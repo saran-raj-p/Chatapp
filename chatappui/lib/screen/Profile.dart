@@ -34,7 +34,7 @@ class _ProfileState extends State<Profile> {
   ];
 
   void getProfile() async {
-    String id = "B08FB381-48F7-4814-AF63-FF3B181B8CEF";
+    String id = (await localStorage.localstoragemethods().getlocal('id'))!;
 
     final response =
         await dataService.httpmethods().getData('Profile/getprofile?id=$id');

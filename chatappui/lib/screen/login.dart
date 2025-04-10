@@ -63,7 +63,6 @@ class Login extends StatelessWidget {
               TextButton(
                 onPressed: () async {
                   Map<String, dynamic> body = {
-                    "UserId": "B08FB381-48F7-4814-AF63-FF3B181B8CEF",
                     "Email": userNameController.text,
                     "Password": userPasswordController.text,
                   };
@@ -74,6 +73,7 @@ class Login extends StatelessWidget {
                     var resource = response.data;
                     local.setLocal('accessToken', resource['accessToken']);
                     local.setLocal('refreshToken', resource['refreshToken']);
+                    local.setLocal('id', resource['id']);
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Login Successful'),
                       duration: Durations.extralong4,

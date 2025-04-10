@@ -7,8 +7,8 @@ class httpmethods {
     dio = Dio(BaseOptions(baseUrl: 'https://localhost:7165/api/'));
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
-        final token =
-            localstorage.localstoragemethods().getlocal('accessToken');
+        String token =
+            (await localstorage.localstoragemethods().getlocal('accessToken')!);
         options.headers['Authorization'] = 'Bearer $token';
         return handler.next(options);
       },
@@ -16,6 +16,7 @@ class httpmethods {
         if (error.response?.statusCode == 401) {
           final refreshToken =
               localstorage.localstoragemethods().getlocal('refreshToken');
+          print(refreshToken);
           try {
             var refresh = await dio
                 .post('Auth/ExpiredToken/', data: {'token': refreshToken});
