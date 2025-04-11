@@ -33,7 +33,7 @@ class GetStarted extends StatelessWidget {
             const SizedBox(height: 110),
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/Main');
+                Navigator.pushNamed(context, '/register');
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.black,

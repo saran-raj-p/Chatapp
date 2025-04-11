@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    initialRoute: '/getstarted',
+    initialRoute: '/Main',
     routes: {
       '/Main': (context) => const MainApp(),
       '/login': (context) => Login(),
@@ -17,7 +17,8 @@ void main() {
       '/profile': (context) => Profile(),
       '/getstarted': (context) => const GetStarted(),
       '/forgot': (context) => Forgotpassword(),
-      '/editProfile': (context) => EditProfile(),
+      '/editProfile': (context) => const EditProfile(),
+      '/start': (context) => GetStarted(),
     },
   ));
 }
@@ -80,6 +81,14 @@ class MainApp extends StatelessWidget {
               },
               child: const Text(
                 "Edit Profile",
+                selectionColor: Colors.cyan,
+              )),
+          TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/start');
+              },
+              child: const Text(
+                "Start",
                 selectionColor: Colors.cyan,
               ))
         ],

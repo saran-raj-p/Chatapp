@@ -28,8 +28,8 @@ class Login extends StatelessWidget {
                 child: TextFormField(
                   controller: userNameController,
                   decoration: const InputDecoration(
-                      hintText: "Enter Username",
-                      labelText: "UserName",
+                      hintText: "Enter Email",
+                      labelText: "Email",
                       border: OutlineInputBorder()),
                 ),
               ),
@@ -71,8 +71,9 @@ class Login extends StatelessWidget {
                       .postWithData('Auth/UserLogin/', body);
                   if (response.statusCode == 200) {
                     var resource = response.data;
-                    local.setLocal('Access', resource['accessToken']);
-                    local.setLocal('Refresh', resource['refreshToken']);
+                    local.setLocal('accessToken', resource['accessToken']);
+                    local.setLocal('refreshToken', resource['refreshToken']);
+                    local.setLocal('id', resource['id']);
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                       content: Text('Login Successful'),
                       duration: Durations.extralong4,
