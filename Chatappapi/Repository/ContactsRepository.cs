@@ -1,8 +1,11 @@
 ﻿using System.Data;
+//using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using Chatappapi.Interface;
 using Chatappapi.Model;
 using Dapper;
 using management_system_backend_api.Database.SqlConnectionPlace;
+
 
 namespace Chatappapi.Repository
 {
@@ -13,33 +16,55 @@ namespace Chatappapi.Repository
         {
             _sqlConnnectionFactory = sqlConnnectionFactory;
         }
-        public Task<Contacts> createcontact(Contacts contact) {
-            var database = _sqlConnnectionFactory.OpenSqlConnection();
+        public async Task<Contacts> createcontact(Contacts contact) {
+            try
+            {
+                using var database = _sqlConnnectionFactory.OpenSqlConnection();
 
-            DynamicParameters parameters = new DynamicParameters();
+                DynamicParameters parameters = new DynamicParameters();
 
-            parameters.Add("id",contact.id);
-            parameters.Add("name", contact.name);
-            parameters.Add("email", contact.email);
-            parameters.Add("phone", contact.phone);
-            parameters.Add("userId", contact.userId);
 
-            var result = database.QueryFirstOrDefaultAsync<Contacts>("CreateContact",parameters, commandType: CommandType.StoredProcedure);
+                parameters.Add("name", contact.name);
+                parameters.Add("email", contact.email);
+                parameters.Add("phone", contact.phone);
+                parameters.Add("userId", contact.userId);
 
-            return result;
+                var result = await database.QueryFirstOrDefaultAsync<Contacts>("CreateContact", parameters, commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+            catch(SqlException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public Task<Contacts> getcontact(Contacts contact)
+        public Task<IEnumerable<Contacts>> getcontact(Contacts contact)
         {
-            var database = _sqlConnnectionFactory.OpenSqlConnection();
+            try
+            {
+                using var database = _sqlConnnectionFactory.OpenSqlConnection();
 
-            DynamicParameters parameters = new DynamicParameters();
+                DynamicParameters parameters = new DynamicParameters();
 
-            parameters.Add("userId", contact.userId);
+                parameters.Add("userId", contact.userId);
 
-            var result = database.QueryFirstOrDefaultAsync<Contacts>("GetContact", parameters, commandType: CommandType.StoredProcedure);
+                var result = database.QueryAsync<Contacts>("GetContact", parameters, commandType: CommandType.StoredProcedure);
 
-            return result;
+                return result;
+            }
+            catch (SqlException ex)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
 
         }
     }

@@ -1,8 +1,10 @@
 use Chatapp
 
-create procedure GetProfile
-	@userId varchar(255)
+create procedure GetContact
+	@userId uniqueidentifier
 as
 begin
-	select * from Chatuser where id = @userId;
+	select * from Contact where userId = @userId;
 end
+
+drop procedure GetContact

@@ -6,6 +6,6 @@ namespace Chatappapi.Interface
     {
         public Task<Contacts> createcontact(Contacts contact);
 
-        public Task<Contacts> getcontact(Contacts contact);
+        public Task<IEnumerable<Contacts>>getcontact(Contacts contact);
     }
 }

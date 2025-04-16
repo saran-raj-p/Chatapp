@@ -1,10 +1,12 @@
 use Chatapp
 
 create table Contact(
-	id int primary key identity,
+	id uniqueidentifier primary key,
 	name varchar(255),
 	email varchar(255),
 	phone varchar(225),
-	userId vachar(255) not null,
+	userId uniqueidentifier not null,
 	foreign key (userId) references Chatuser(id)
 );
+
+drop table Contact
