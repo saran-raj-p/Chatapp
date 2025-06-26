@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ytA5HsKN5o=",
+  "dgSpecHash": "2rGko3mZhQE=",
   "success": true,
-  "projectFilePath": "D:\\Chatapp\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+  "projectFilePath": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saran\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\saran\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
