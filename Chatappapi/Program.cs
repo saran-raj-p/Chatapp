@@ -38,6 +38,7 @@ builder.Services.AddScoped<IAuthentication,Authentication>();
 builder.Services.AddScoped<IProfileRepository, ProfileRepository>();
 builder.Services.AddScoped<IForgotPasswordRepository, ForgotPasswordRepository>();
 builder.Services.AddScoped<IContactsRepository, ContactsRepository>();
+builder.Services.AddScoped<IChat, ChatRepository>();
 
 //Add Services
 builder.Services.AddScoped<ProfileCloudService>();

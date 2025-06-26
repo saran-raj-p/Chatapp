@@ -358,3 +358,9 @@ D:\Chatapp\Chatapp\Chatappapi\obj\Debug\net8.0\refint\Chatappapi.dll
 D:\Chatapp\Chatapp\Chatappapi\obj\Debug\net8.0\Chatappapi.pdb
 D:\Chatapp\Chatapp\Chatappapi\obj\Debug\net8.0\Chatappapi.genruntimeconfig.cache
 D:\Chatapp\Chatapp\Chatappapi\obj\Debug\net8.0\ref\Chatappapi.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\Chatappapi.staticwebassets.endpoints.json
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\CloudinaryDotNet.dll
+D:\my projects\Chatapp\Chatappapi\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\my projects\Chatapp\Chatappapi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\my projects\Chatapp\Chatappapi\obj\Debug\net8.0\staticwebassets\msbuild.Chatappapi.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\my projects\Chatapp\Chatappapi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

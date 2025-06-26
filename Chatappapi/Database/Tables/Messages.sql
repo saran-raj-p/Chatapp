@@ -1,0 +1,8 @@
+CREATE TABLE Message (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    FromId UNIQUEIDENTIFIER,
+    ToId UNIQUEIDENTIFIER,
+    SendTime DATETIME,
+    ReadStatus INT,
+    Message NVARCHAR(MAX)
+);

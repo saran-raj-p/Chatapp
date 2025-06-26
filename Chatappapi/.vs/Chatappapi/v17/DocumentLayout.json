@@ -1,12 +1,88 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Chatapp\\Chatapp\\Chatappapi\\",
-  "Documents": [],
+  "WorkspaceRootPath": "D:\\my projects\\Chatapp\\Chatappapi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\interface\\ichat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:interface\\ichat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\repository\\chatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:repository\\chatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|d:\\my projects\\chatapp\\chatappapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B3E7E8B0-7CFF-474E-A5AD-7EA9F7C5BE6D}|Chatappapi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IChat.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Interface\\IChat.cs",
+              "RelativeDocumentMoniker": "Interface\\IChat.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Interface\\IChat.cs",
+              "RelativeToolTip": "Interface\\IChat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T07:06:07.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChatRepository.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Repository\\ChatRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\ChatRepository.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Repository\\ChatRepository.cs",
+              "RelativeToolTip": "Repository\\ChatRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAewA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T06:54:05.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "Controllers\\ChatController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBcAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T06:51:10.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\my projects\\Chatapp\\Chatappapi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-26T06:50:22.105Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

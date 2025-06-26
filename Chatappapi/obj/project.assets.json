@@ -8026,11 +8026,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Chatapp\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+      "projectUniqueName": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
       "projectName": "Chatappapi",
-      "projectPath": "D:\\Chatapp\\Chatapp\\Chatappapi\\Chatappapi.csproj",
+      "projectPath": "D:\\my projects\\Chatapp\\Chatappapi\\Chatappapi.csproj",
       "packagesPath": "C:\\Users\\saran\\.nuget\\packages\\",
-      "outputPath": "D:\\Chatapp\\Chatapp\\Chatappapi\\obj\\",
+      "outputPath": "D:\\my projects\\Chatapp\\Chatappapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
