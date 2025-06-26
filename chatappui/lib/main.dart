@@ -1,4 +1,5 @@
 import 'package:chatappui/screen/Profile.dart';
+import 'package:chatappui/screen/chatpage.dart';
 import 'package:chatappui/screen/edit_profile.dart';
 import 'package:chatappui/screen/get_started.dart';
 import 'package:chatappui/screen/login.dart';
@@ -18,6 +19,7 @@ void main() {
       '/getstarted': (context) => const GetStarted(),
       '/forgot': (context) => Forgotpassword(),
       '/editProfile': (context) => const EditProfile(),
+      '/chatpage':(context) => const WhatsAppHomePage(),
       '/start': (context) => GetStarted(),
     },
   ));
@@ -64,6 +66,16 @@ class MainApp extends StatelessWidget {
             },
             child: const Text(
               "Forgotpassword",
+              selectionColor: Colors.cyan,
+            ),
+          ),
+
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/chatpage');
+            },
+            child: const Text(
+              "ChatPage",
               selectionColor: Colors.cyan,
             ),
           ),
