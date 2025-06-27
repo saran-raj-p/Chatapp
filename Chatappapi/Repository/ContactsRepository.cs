@@ -16,7 +16,7 @@ namespace Chatappapi.Repository
         {
             _sqlConnnectionFactory = sqlConnnectionFactory;
         }
-        public async Task<Contacts> createcontact(Contacts contact) {
+        public async Task<Contacts> createcontact(ContactsDTO contact) {
             try
             {
                 using var database = _sqlConnnectionFactory.OpenSqlConnection();
@@ -43,7 +43,7 @@ namespace Chatappapi.Repository
             }
         }
 
-        public Task<IEnumerable<Contacts>> getcontact(Contacts contact)
+        public async Task<IEnumerable<Contacts>> getcontact(getContact contact)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace Chatappapi.Repository
 
                 parameters.Add("userId", contact.userId);
 
-                var result = database.QueryAsync<Contacts>("GetContact", parameters, commandType: CommandType.StoredProcedure);
+                var result = await database.QueryAsync<Contacts>("GetContact", parameters, commandType: CommandType.StoredProcedure);
 
                 return result;
             }

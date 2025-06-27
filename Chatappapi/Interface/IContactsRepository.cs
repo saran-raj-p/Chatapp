@@ -4,8 +4,8 @@ namespace Chatappapi.Interface
 {
     public interface IContactsRepository
     {
-        public Task<Contacts> createcontact(Contacts contact);
+        public Task<Contacts> createcontact(ContactsDTO contact);
 
-        public Task<IEnumerable<Contacts>>getcontact(Contacts contact);
+        public Task<IEnumerable<Contacts>>getcontact(getContact contact);
     }
 }

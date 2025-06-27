@@ -1,9 +1,12 @@
 ﻿using Chatappapi.Interface;
 using Chatappapi.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 namespace Chatappapi.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class ContactsController : Controller
     {
         private readonly IContactsRepository _contactsRepository;
@@ -15,7 +18,7 @@ namespace Chatappapi.Controllers
 
 
         [HttpPost("createContact")]
-        public async Task<IActionResult> CreateContact([FromBody]Contacts model)
+        public async Task<IActionResult> CreateContact([FromBody]ContactsDTO model)
 
         {
             try
@@ -32,6 +35,15 @@ namespace Chatappapi.Controllers
 
                 return Ok(new { Message = "Contact created successfully", Data = res });
             }
+            catch (SqlException ex)
+            {
+                // Catching the RAISERROR from SQL
+                return StatusCode(400, new
+                {
+                    message = "Failed to create contact",
+                    details = ex.Message
+                });
+            }
             catch (Exception ex)
             {
                 return StatusCode(500, new { error = "Error", details = ex.Message });
@@ -40,7 +52,7 @@ namespace Chatappapi.Controllers
         }
 
         [HttpGet("getContact")]
-        public async Task<IActionResult> GetContact([FromQuery]Contacts model)
+        public async Task<IActionResult> GetContact([FromQuery]getContact model)
         {
             try
             {
