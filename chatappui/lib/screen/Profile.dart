@@ -100,11 +100,17 @@ class _ProfileState extends State<Profile> {
                           });
                         },
                       ),
-                      const PopupMenuItem(
-                          value: 3,
-                          child: Row(
-                            children: [Icon(Icons.home), Text("Home")],
-                          )),
+                      PopupMenuItem(
+                        value: 3,
+                        child: const Row(
+                          children: [Icon(Icons.home), Text("Chatpage")],
+                        ),
+                        onTap: () {
+                          Future.delayed(Duration.zero, () {
+                            Navigator.pushNamed(context, '/chatpage');
+                          });
+                        },
+                      ),
                       const PopupMenuItem(
                           value: 4,
                           child: Row(
