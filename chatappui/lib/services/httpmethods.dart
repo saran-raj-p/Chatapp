@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 class httpmethods {
   late final dio;
   httpmethods() {
-    String url = "https://alive-secure-urchin.ngrok-free.app/api/";
+    String url = "https://localhost:7165/api/";
     dio = Dio(BaseOptions(baseUrl: url));
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (options, handler) async {
